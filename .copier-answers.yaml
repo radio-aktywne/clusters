@@ -1,0 +1,10 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: 0.1.0
+_src_path: gh:radio-aktywne/template-flux
+accountname: radio-aktywne
+description: Flux manifests for our k8s clusters ☸️
+docs: true
+docsurl: https://radio-aktywne.github.io/clusters
+projectname: clusters
+reponame: clusters
+repourl: https://github.com/radio-aktywne/clusters
