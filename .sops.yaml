@@ -1,8 +1,12 @@
 # This are the public keys of the age keypairs used to encrypt files
 # You should have the private keys on your machine
-keys: []
+keys:
+  - &clusters age1v3g2m2yl9jmu53r6h68fkllunvws389nseyp2waarul2m9r3we9sx0gfjt
+  - &spietras age14uepygtepskwehywergh9fe9j2a3ytqd80y9r2ekfmett6rq3peqjtgxns
 creation_rules:
   # Allow any path in src to be encrypted
   - path_regex: src/.*
     key_groups:
-      - age: []
+      - age:
+          - *clusters
+          - *spietras
