@@ -1,0 +1,8 @@
+# Create metallb Helm repository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: metallb
+spec:
+  type: default
+  url: https://metallb.github.io/metallb
