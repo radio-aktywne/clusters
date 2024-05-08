@@ -4,6 +4,7 @@ kind: Kustomization
 # Include the following resources
 resources:
   - longhorn/longhorn.yaml
+  - metallb/metallb.yaml
   - metrics/metrics.yaml
 # Apply patches for common configurations
 patches:
