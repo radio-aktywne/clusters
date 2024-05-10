@@ -32,3 +32,6 @@ spec:
           name: addresspools.metallb.io
   # This key always needs to be here for patching to work
   postRenderers: []
+  values:
+    # Set the class for the LoadBalancer
+    loadBalancerClass: metallb
