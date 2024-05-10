@@ -1,0 +1,18 @@
+# Create HTTP ingress route for podinfo
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: podinfo-http
+spec:
+  entryPoints:
+    # Use entrypoint for HTTP traffic
+    - http
+  routes:
+    # Match traffic with the Host header
+    - match: HostRegexp(`podinfo\..*`)
+      kind: Rule
+      services:
+        # Route traffic to the podinfo service
+        - name: podinfo
+          # This is the name of the port in the service
+          port: http

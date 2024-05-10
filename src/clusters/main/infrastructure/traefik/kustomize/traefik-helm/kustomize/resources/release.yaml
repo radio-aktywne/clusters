@@ -1,0 +1,56 @@
+# Create traefik Helm release
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: traefik
+spec:
+  chart:
+    spec:
+      # Use this chart from the repository
+      chart: traefik
+      # Pin version to major
+      version: "26.x"
+      # Use this Helm repository
+      sourceRef:
+        kind: HelmRepository
+        name: traefik
+  # This key always needs to be here for patching to work
+  postRenderers: []
+  values:
+    # Use Traefik v3
+    image:
+      tag: "v3.0"
+    # Additional arguments for the traefik binary
+    additionalArguments:
+      # Allow backends to use self-signed certificates
+      - --serversTransport.insecureSkipVerify=true
+      - --tcpServersTransport.tls.insecureSkipVerify=true
+    # Disable the dashboard
+    ingressRoute:
+      dashboard:
+        enabled: false
+    # Disable Prometheus metrics
+    metrics:
+      prometheus: false
+    # Entrypoints
+    ports:
+      # Disable default ports
+      web: false
+      websecure: false
+      metrics: false
+      # Port for HTTP traffic
+      http:
+        # Expose it outside the cluster
+        expose: true
+        # Expose it on this port
+        exposedPort: 80
+        # HTTP traffic uses TCP
+        protocol: TCP
+        # Port to use inside the cluster
+        port: 8080
+    service:
+      annotations:
+        # Use static IP address for the service
+        metallb.universe.tf/loadBalancerIPs: 192.168.1.126
+      # Use MetalLB LoadBalancer
+      loadBalancerClass: metallb

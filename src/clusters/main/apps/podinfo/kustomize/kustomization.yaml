@@ -5,3 +5,4 @@ kind: Kustomization
 resources:
   - podinfo-helm/podinfo-helm.yaml
   - podinfo-namespace/podinfo-namespace.yaml
+  - podinfo-traefik/podinfo-traefik.yaml

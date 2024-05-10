@@ -1,0 +1,39 @@
+# Create traefik-helm Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: traefik-helm
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: tests/clusters/vm/main/infrastructure/traefik/kustomize/traefik-helm/kustomize
+  dependsOn:
+    # Deploy namespace first
+    - name: traefik-namespace
+  # This key always needs to be here for patching to work
+  patches:
+    # Remove MetalLB annotations from Traefik service
+    - target:
+        group: helm.toolkit.fluxcd.io
+        kind: HelmRelease
+        name: traefik
+      patch: |
+        - op: remove
+          path: /spec/values/service/annotations/metallb.universe.tf~1loadBalancerIPs
+    # Remove loadBalancerClass from Traefik service
+    - target:
+        group: helm.toolkit.fluxcd.io
+        kind: HelmRelease
+        name: traefik
+      patch: |
+        - op: remove
+          path: /spec/values/service/loadBalancerClass
+    # Disable Traefik LoadBalancer service
+    - patch: |
+        apiVersion: helm.toolkit.fluxcd.io/v2beta1
+        kind: HelmRelease
+        metadata:
+          name: traefik
+        spec:
+          values:
+            service:
+              enabled: false
