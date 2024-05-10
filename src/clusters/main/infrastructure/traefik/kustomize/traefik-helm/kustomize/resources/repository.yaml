@@ -1,0 +1,8 @@
+# Create traefik Helm repository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: traefik
+spec:
+  type: default
+  url: https://traefik.github.io/charts
