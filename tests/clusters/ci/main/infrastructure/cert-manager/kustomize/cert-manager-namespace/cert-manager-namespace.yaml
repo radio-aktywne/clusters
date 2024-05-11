@@ -1,0 +1,10 @@
+# Create cert-manager-namespace Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: cert-manager-namespace
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: tests/clusters/ci/main/infrastructure/cert-manager/kustomize/cert-manager-namespace/kustomize
+  # This key always needs to be here for patching to work
+  patches: []

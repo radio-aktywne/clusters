@@ -1,0 +1,8 @@
+# Configure names transformer
+nameReference:
+  - kind: Secret
+    fieldSpecs:
+      # Replace secret names in ClusterIssuer
+      - group: cert-manager.io
+        kind: ClusterIssuer
+        path: spec/ca/secretName

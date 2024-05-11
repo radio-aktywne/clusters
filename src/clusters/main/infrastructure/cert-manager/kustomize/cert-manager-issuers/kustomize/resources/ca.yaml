@@ -1,0 +1,10 @@
+# Create ca ClusterIssuer
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: ca
+spec:
+  # Obtain certificates using Certificate Authority represented by a secret
+  ca:
+    # Use root certificate and private key from this secret
+    secretName: cert-manager-issuers-secrets-root-ca
