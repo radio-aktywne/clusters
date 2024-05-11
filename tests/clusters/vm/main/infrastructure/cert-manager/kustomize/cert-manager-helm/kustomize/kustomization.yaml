@@ -1,0 +1,5 @@
+# Overlay cert-manager-helm Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../../../../../../../../src/clusters/main/infrastructure/cert-manager/kustomize/cert-manager-helm/kustomize

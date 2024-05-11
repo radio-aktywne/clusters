@@ -1,0 +1,13 @@
+# Create cert-manager-issuers Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: cert-manager-issuers
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: src/clusters/main/infrastructure/cert-manager/kustomize/cert-manager-issuers/kustomize
+  dependsOn:
+    # Deploy Helm release first
+    - name: cert-manager-helm
+  # This key always needs to be here for patching to work
+  patches: []
