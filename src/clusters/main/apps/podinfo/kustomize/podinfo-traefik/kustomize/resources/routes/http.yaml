@@ -5,8 +5,8 @@ metadata:
   name: podinfo-http
 spec:
   entryPoints:
-    # Use entrypoint for HTTP traffic
-    - http
+    # Use entrypoint for HTTPS traffic
+    - https
   routes:
     # Match traffic with the Host header
     - match: HostRegexp(`podinfo\..*`)

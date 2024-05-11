@@ -1,0 +1,16 @@
+# Create certificate
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: certificate
+spec:
+  # Include the following DNS names in the Subject Alt Name field
+  dnsNames:
+    - "*.k8s.radioaktywne.pl"
+  # Use Certificate Authority to issue the certificate
+  issuerRef:
+    name: issuer
+    kind: ClusterIssuer
+  # Store the certificate in the following secret
+  # This secret will be created automatically by cert-manager
+  secretName: certificate

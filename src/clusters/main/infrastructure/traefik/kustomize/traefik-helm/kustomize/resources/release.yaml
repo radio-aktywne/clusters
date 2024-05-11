@@ -48,6 +48,35 @@ spec:
         protocol: TCP
         # Port to use inside the cluster
         port: 8080
+        # Redirect to HTTPS
+        redirectTo:
+          port: https
+      # Port for HTTPS traffic
+      https:
+        # Expose it outside the cluster
+        expose: true
+        # Expose it on this port
+        exposedPort: 443
+        # Secure web traffic uses TCP
+        protocol: TCP
+        # Port to use inside the cluster
+        port: 8443
+        # Enable TLS
+        tls:
+          enabled: true
+      # Port for TLS over TCP traffic
+      tls-tcp:
+        # Expose it outside the cluster
+        expose: true
+        # Expose it on this port
+        exposedPort: 10000
+        # TCP traffic uses TCP
+        protocol: TCP
+        # Port to use inside the cluster
+        port: 10000
+        # Enable TLS
+        tls:
+          enabled: true
     service:
       annotations:
         # Use static IP address for the service
