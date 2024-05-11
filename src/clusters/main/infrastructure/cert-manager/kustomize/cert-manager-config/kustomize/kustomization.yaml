@@ -10,6 +10,6 @@ resources:
 # Generate secrets
 secretGenerator:
   - files:
-      - tls.crt=secrets/tls.crt.json
-      - tls.key=secrets/tls.key.json
+      - tls.crt=secrets/tls.crt
+      - tls.key=secrets/tls.key
     name: cert-manager-config-secrets-issuer
