@@ -100,6 +100,16 @@ spec:
         # Enable TLS passthrough
         tls:
           passthrough: true
+      # Port for emirecorder SRT traffic
+      emirecorder-srt:
+        # Expose it outside the cluster
+        expose: true
+        # Expose it on this port
+        exposedPort: 9997
+        # fusion SRT traffic uses UDP
+        protocol: UDP
+        # Port to use inside the cluster
+        port: 9997
     service:
       annotations:
         # Use static IP address for the service
