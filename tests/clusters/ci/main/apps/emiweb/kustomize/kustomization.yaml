@@ -1,0 +1,8 @@
+# Create emiweb Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+# Include the following resources
+resources:
+  - emiweb-helm/emiweb-helm.yaml
+  - emiweb-namespace/emiweb-namespace.yaml
+  - emiweb-traefik/emiweb-traefik.yaml

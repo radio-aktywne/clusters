@@ -1,0 +1,10 @@
+# Create emiweb-namespace Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: emiweb-namespace
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: src/clusters/main/apps/emiweb/kustomize/emiweb-namespace/kustomize
+  # This key always needs to be here for patching to work
+  patches: []

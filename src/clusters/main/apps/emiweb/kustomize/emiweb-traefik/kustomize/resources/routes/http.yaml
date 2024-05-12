@@ -1,0 +1,18 @@
+# Create HTTP ingress route for emiweb
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: emiweb-http
+spec:
+  entryPoints:
+    # Use entrypoint for HTTPS traffic
+    - https
+  routes:
+    # Match traffic with the Host header
+    - match: HostRegexp(`emiweb\..*`)
+      kind: Rule
+      services:
+        # Route traffic to the emiweb service
+        - name: emiweb
+          # This is the name of the port in the service
+          port: http
