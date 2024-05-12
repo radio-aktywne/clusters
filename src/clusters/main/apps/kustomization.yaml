@@ -3,6 +3,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 # Include the following resources
 resources:
+  - fusion/fusion.yaml
   - podinfo/podinfo.yaml
   - streamcast/streamcast.yaml
 # Apply patches for common configurations
