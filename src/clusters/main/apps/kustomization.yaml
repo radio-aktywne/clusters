@@ -5,6 +5,7 @@ kind: Kustomization
 resources:
   - emirecorder/emirecorder.yaml
   - emishows/emishows.yaml
+  - emistream/emistream.yaml
   - fusion/fusion.yaml
   - podinfo/podinfo.yaml
   - streamcast/streamcast.yaml
