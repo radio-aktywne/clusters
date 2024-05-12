@@ -1,0 +1,18 @@
+# Create S3 ingress route for emiarchive
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: emiarchive-s3
+spec:
+  entryPoints:
+    # Use entrypoint for HTTPS traffic
+    - https
+  routes:
+    # Match traffic with the Host header
+    - match: HostRegexp(`emiarchive\..*`)
+      kind: Rule
+      services:
+        # Route traffic to the emiarchive service
+        - name: emiarchive
+          # This is the name of the port in the service
+          port: s3
