@@ -8,6 +8,7 @@ resources:
   - emischeduler/emischeduler.yaml
   - emishows/emishows.yaml
   - emistream/emistream.yaml
+  - emiweb/emiweb.yaml
   - fusion/fusion.yaml
   - podinfo/podinfo.yaml
   - streamcast/streamcast.yaml
