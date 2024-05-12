@@ -4,6 +4,7 @@ kind: Kustomization
 # Include the following resources
 resources:
   - emirecorder/emirecorder.yaml
+  - emischeduler/emischeduler.yaml
   - emishows/emishows.yaml
   - emistream/emistream.yaml
   - fusion/fusion.yaml

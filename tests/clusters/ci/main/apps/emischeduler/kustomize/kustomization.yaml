@@ -1,0 +1,8 @@
+# Create emischeduler Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+# Include the following resources
+resources:
+  - emischeduler-helm/emischeduler-helm.yaml
+  - emischeduler-namespace/emischeduler-namespace.yaml
+  - emischeduler-traefik/emischeduler-traefik.yaml
