@@ -77,6 +77,16 @@ spec:
         # Enable TLS
         tls:
           enabled: true
+      # Port for fusion SRT traffic
+      fusion-srt:
+        # Expose it outside the cluster
+        expose: true
+        # Expose it on this port
+        exposedPort: 9999
+        # fusion SRT traffic uses UDP
+        protocol: UDP
+        # Port to use inside the cluster
+        port: 9999
     service:
       annotations:
         # Use static IP address for the service
