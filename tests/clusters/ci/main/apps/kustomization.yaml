@@ -4,6 +4,7 @@ kind: Kustomization
 # Include the following resources
 resources:
   - podinfo/podinfo.yaml
+  - streamcast/streamcast.yaml
 # Apply patches for common configurations
 patches:
   # Set patch to add labels to all resources in nested Kustomizations
