@@ -37,3 +37,43 @@ spec:
           values:
             service:
               enabled: false
+    # Remove fusion-srt port
+    - target:
+        group: helm.toolkit.fluxcd.io
+        kind: HelmRelease
+        name: traefik
+      patch: |
+        - op: remove
+          path: /spec/values/ports/fusion-srt
+    # Remove emishows-db-sql port
+    - target:
+        group: helm.toolkit.fluxcd.io
+        kind: HelmRelease
+        name: traefik
+      patch: |
+        - op: remove
+          path: /spec/values/ports/emishows-db-sql
+    # Remove emirecorder-srt port
+    - target:
+        group: helm.toolkit.fluxcd.io
+        kind: HelmRelease
+        name: traefik
+      patch: |
+        - op: remove
+          path: /spec/values/ports/emirecorder-srt
+    # Remove emistream-srt port
+    - target:
+        group: helm.toolkit.fluxcd.io
+        kind: HelmRelease
+        name: traefik
+      patch: |
+        - op: remove
+          path: /spec/values/ports/emistream-srt
+    # Remove emipass-rtp port
+    - target:
+        group: helm.toolkit.fluxcd.io
+        kind: HelmRelease
+        name: traefik
+      patch: |
+        - op: remove
+          path: /spec/values/ports/emipass-rtp

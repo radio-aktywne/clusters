@@ -7,4 +7,20 @@ spec:
   # Path inside repository to a directory containing Kustomization files
   path: tests/clusters/vm/main/infrastructure/traefik/kustomize/traefik-config/kustomize
   # This key always needs to be here for patching to work
-  patches: []
+  patches:
+    # Remove *.emiarchive.k8s.radioaktywne.pl DNS name from certificate
+    - target:
+        group: cert-manager.io
+        kind: Certificate
+        name: certificate
+      patch: |
+        - op: remove
+          path: /spec/dnsNames/1
+    # Remove *.emipass.k8s.radioaktywne.pl DNS name from certificate
+    - target:
+        group: cert-manager.io
+        kind: Certificate
+        name: certificate
+      patch: |
+        - op: remove
+          path: /spec/dnsNames/2
