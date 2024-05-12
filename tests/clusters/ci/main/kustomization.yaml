@@ -4,6 +4,7 @@ kind: Kustomization
 # Include the following resources
 resources:
   - apps
+  - databases
   - infrastructure
 # Apply patches for common configurations
 patches:
