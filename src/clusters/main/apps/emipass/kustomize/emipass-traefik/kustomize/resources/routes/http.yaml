@@ -1,0 +1,18 @@
+# Create HTTP ingress route for emipass
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: emipass-http
+spec:
+  entryPoints:
+    # Use entrypoint for HTTPS traffic
+    - https
+  routes:
+    # Match traffic with the Host header
+    - match: HostRegexp(`emipass\..*`)
+      kind: Rule
+      services:
+        # Route traffic to the emipass service
+        - name: emipass
+          # This is the name of the port in the service
+          port: http
