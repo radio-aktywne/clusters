@@ -87,6 +87,19 @@ spec:
         protocol: UDP
         # Port to use inside the cluster
         port: 9999
+      # Port for emishows-db SQL traffic
+      emishows-db-sql:
+        # Expose it outside the cluster
+        expose: true
+        # Expose it on this port
+        exposedPort: 9998
+        # emishows-db SQL traffic uses TCP
+        protocol: TCP
+        # Port to use inside the cluster
+        port: 9998
+        # Enable TLS passthrough
+        tls:
+          passthrough: true
     service:
       annotations:
         # Use static IP address for the service
