@@ -133,6 +133,6 @@ spec:
     service:
       annotations:
         # Use static IP address for the service
-        metallb.universe.tf/loadBalancerIPs: 192.168.1.126
+        metallb.universe.tf/loadBalancerIPs: 10.21.37.126
       # Use MetalLB LoadBalancer
       loadBalancerClass: metallb
