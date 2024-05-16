@@ -6,4 +6,4 @@ metadata:
 spec:
   # Assign IP addresses from this range
   addresses:
-    - 192.168.1.126-192.168.1.254
+    - 10.21.37.126-10.21.37.254
