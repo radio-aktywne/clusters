@@ -1,0 +1,5 @@
+# Create webscheduler namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: webscheduler
