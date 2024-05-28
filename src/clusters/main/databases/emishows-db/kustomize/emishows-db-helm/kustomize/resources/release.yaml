@@ -22,8 +22,8 @@ spec:
       access: ReadWriteOnce
       # Use Longhorn storage class
       class: longhorn
-      # Use 1 Gigabyte volume size
-      size: 1Gi
+      # Use 4 Gigabyte volume size
+      size: 4Gi
   valuesFrom:
     - kind: Secret
       name: emishows-db-helm-secrets-values
