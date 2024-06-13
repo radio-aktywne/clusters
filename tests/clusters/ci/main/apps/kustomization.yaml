@@ -13,6 +13,7 @@ resources:
   - podinfo/podinfo.yaml
   - streamcast/streamcast.yaml
   - webscheduler/webscheduler.yaml
+  - webshows/webshows.yaml
 # Apply patches for common configurations
 patches:
   # Set patch to add labels to all resources in nested Kustomizations
