@@ -8,6 +8,7 @@ spec:
   dnsNames:
     - "*.k8s.radioaktywne.pl"
     - "*.datarecords.k8s.radioaktywne.pl"
+    - "*.datatunes.k8s.radioaktywne.pl"
     - "*.emipass.k8s.radioaktywne.pl"
   # Use Certificate Authority to issue the certificate
   issuerRef:
