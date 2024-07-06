@@ -1,8 +1,0 @@
-# Create emishows-db Kustomization
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-# Include the following resources
-resources:
-  - emishows-db-helm/emishows-db-helm.yaml
-  - emishows-db-namespace/emishows-db-namespace.yaml
-  - emishows-db-traefik/emishows-db-traefik.yaml

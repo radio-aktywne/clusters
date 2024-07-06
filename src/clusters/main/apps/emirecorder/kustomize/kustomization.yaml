@@ -1,8 +1,0 @@
-# Create emirecorder Kustomization
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-# Include the following resources
-resources:
-  - emirecorder-helm/emirecorder-helm.yaml
-  - emirecorder-namespace/emirecorder-namespace.yaml
-  - emirecorder-traefik/emirecorder-traefik.yaml

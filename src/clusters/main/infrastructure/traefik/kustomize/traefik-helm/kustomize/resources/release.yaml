@@ -87,21 +87,21 @@ spec:
         protocol: UDP
         # Port to use inside the cluster
         port: 9999
-      # Port for emishows-db SQL traffic
-      emishows-db-sql:
+      # Port for datashows SQL traffic
+      datashows-sql:
         # Expose it outside the cluster
         expose: true
         # Expose it on this port
         exposedPort: 9998
-        # emishows-db SQL traffic uses TCP
+        # datashows SQL traffic uses TCP
         protocol: TCP
         # Port to use inside the cluster
         port: 9998
         # Enable TLS passthrough
         tls:
           passthrough: true
-      # Port for emirecorder SRT traffic
-      emirecorder-srt:
+      # Port for emirecords SRT traffic
+      emirecords-srt:
         # Expose it outside the cluster
         expose: true
         # Expose it on this port

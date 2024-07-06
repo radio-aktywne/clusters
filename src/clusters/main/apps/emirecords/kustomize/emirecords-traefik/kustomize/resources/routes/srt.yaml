@@ -1,0 +1,15 @@
+# Create SRT ingress route for emirecords
+apiVersion: traefik.io/v1alpha1
+kind: IngressRouteUDP
+metadata:
+  name: emirecords-srt
+spec:
+  entryPoints:
+    # Use entrypoint for emirecords SRT traffic
+    - emirecords-srt
+  routes:
+    - services:
+        # Route traffic to the emirecords service
+        - name: emirecords
+          # This is the name of the port in the service
+          port: srt

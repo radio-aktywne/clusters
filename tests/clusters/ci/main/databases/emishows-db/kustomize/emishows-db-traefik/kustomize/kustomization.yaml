@@ -1,5 +1,0 @@
-# Overlay emishows-db-traefik Kustomization
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-resources:
-  - ../../../../../../../../../src/clusters/main/databases/emishows-db/kustomize/emishows-db-traefik/kustomize
