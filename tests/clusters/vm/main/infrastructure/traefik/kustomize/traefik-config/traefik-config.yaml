@@ -8,7 +8,7 @@ spec:
   path: tests/clusters/vm/main/infrastructure/traefik/kustomize/traefik-config/kustomize
   # This key always needs to be here for patching to work
   patches:
-    # Remove *.emiarchive.k8s.radioaktywne.pl DNS name from certificate
+    # Remove *.datarecords.k8s.radioaktywne.pl DNS name from certificate
     - target:
         group: cert-manager.io
         kind: Certificate

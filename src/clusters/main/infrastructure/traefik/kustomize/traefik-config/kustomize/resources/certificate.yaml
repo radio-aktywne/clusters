@@ -7,7 +7,7 @@ spec:
   # Include the following DNS names in the Subject Alt Name field
   dnsNames:
     - "*.k8s.radioaktywne.pl"
-    - "*.emiarchive.k8s.radioaktywne.pl"
+    - "*.datarecords.k8s.radioaktywne.pl"
     - "*.emipass.k8s.radioaktywne.pl"
   # Use Certificate Authority to issue the certificate
   issuerRef:

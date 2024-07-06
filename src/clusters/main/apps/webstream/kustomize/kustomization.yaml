@@ -1,0 +1,8 @@
+# Create webstream Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+# Include the following resources
+resources:
+  - webstream-helm/webstream-helm.yaml
+  - webstream-namespace/webstream-namespace.yaml
+  - webstream-traefik/webstream-traefik.yaml

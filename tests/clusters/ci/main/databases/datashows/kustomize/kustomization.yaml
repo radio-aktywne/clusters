@@ -1,0 +1,8 @@
+# Create datashows Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+# Include the following resources
+resources:
+  - datashows-helm/datashows-helm.yaml
+  - datashows-namespace/datashows-namespace.yaml
+  - datashows-traefik/datashows-traefik.yaml

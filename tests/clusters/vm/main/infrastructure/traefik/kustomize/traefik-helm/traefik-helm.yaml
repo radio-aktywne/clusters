@@ -45,22 +45,22 @@ spec:
       patch: |
         - op: remove
           path: /spec/values/ports/fusion-srt
-    # Remove emishows-db-sql port
+    # Remove datashows-sql port
     - target:
         group: helm.toolkit.fluxcd.io
         kind: HelmRelease
         name: traefik
       patch: |
         - op: remove
-          path: /spec/values/ports/emishows-db-sql
-    # Remove emirecorder-srt port
+          path: /spec/values/ports/datashows-sql
+    # Remove emirecords-srt port
     - target:
         group: helm.toolkit.fluxcd.io
         kind: HelmRelease
         name: traefik
       patch: |
         - op: remove
-          path: /spec/values/ports/emirecorder-srt
+          path: /spec/values/ports/emirecords-srt
     # Remove emistream-srt port
     - target:
         group: helm.toolkit.fluxcd.io

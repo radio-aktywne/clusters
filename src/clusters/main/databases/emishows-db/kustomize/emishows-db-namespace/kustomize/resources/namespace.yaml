@@ -1,5 +1,0 @@
-# Create emishows-db namespace
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: emishows-db

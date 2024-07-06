@@ -4,16 +4,16 @@ kind: Kustomization
 # Include the following resources
 resources:
   - emipass/emipass.yaml
-  - emirecorder/emirecorder.yaml
+  - emirecords/emirecords.yaml
   - emischeduler/emischeduler.yaml
   - emishows/emishows.yaml
   - emistream/emistream.yaml
-  - emiweb/emiweb.yaml
   - fusion/fusion.yaml
   - podinfo/podinfo.yaml
   - streamcast/streamcast.yaml
   - webscheduler/webscheduler.yaml
   - webshows/webshows.yaml
+  - webstream/webstream.yaml
 # Apply patches for common configurations
 patches:
   # Set patch to add labels to all resources in nested Kustomizations
