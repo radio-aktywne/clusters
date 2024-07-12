@@ -77,3 +77,11 @@ spec:
       patch: |
         - op: remove
           path: /spec/values/ports/emipass-rtp
+    # Remove datatunes-sql port
+    - target:
+        group: helm.toolkit.fluxcd.io
+        kind: HelmRelease
+        name: traefik
+      patch: |
+        - op: remove
+          path: /spec/values/ports/datatunes-sql
