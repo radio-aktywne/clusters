@@ -6,6 +6,7 @@ resources:
   - datarecords/datarecords.yaml
   - datashows/datashows.yaml
   - datatimes/datatimes.yaml
+  - datatunes/datatunes.yaml
   - mediatunes/mediatunes.yaml
 # Apply patches for common configurations
 patches:

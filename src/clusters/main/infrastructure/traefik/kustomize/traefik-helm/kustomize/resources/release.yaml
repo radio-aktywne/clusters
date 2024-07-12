@@ -130,6 +130,19 @@ spec:
         protocol: UDP
         # Port to use inside the cluster
         port: 9995
+      # Port for datatunes SQL traffic
+      datatunes-sql:
+        # Expose it outside the cluster
+        expose: true
+        # Expose it on this port
+        exposedPort: 9994
+        # datatunes SQL traffic uses TCP
+        protocol: TCP
+        # Port to use inside the cluster
+        port: 9994
+        # Enable TLS passthrough
+        tls:
+          passthrough: true
     service:
       annotations:
         # Use static IP address for the service
