@@ -1,0 +1,5 @@
+# Overlay mediatunes-traefik Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../../../../../../../../src/clusters/main/databases/mediatunes/kustomize/mediatunes-traefik/kustomize
