@@ -1,0 +1,5 @@
+# Create emitunes namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: emitunes
