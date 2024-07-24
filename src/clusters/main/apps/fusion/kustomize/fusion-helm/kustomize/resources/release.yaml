@@ -16,6 +16,14 @@ spec:
         name: radio-aktywne
   # This key always needs to be here for patching to work
   postRenderers: []
+  values:
+    volume:
+      # Use ReadWriteOnce access mode
+      access: ReadWriteOnce
+      # Use Longhorn storage class
+      class: longhorn
+      # Use 1 Gigabyte volume size
+      size: 1Gi
   valuesFrom:
     - kind: Secret
       name: fusion-helm-secrets-values

@@ -7,6 +7,8 @@ spec:
   # Path inside repository to a directory containing Kustomization files
   path: src/clusters/main/apps/fusion/kustomize
   dependsOn:
+    # Deploy Longhorn first
+    - name: longhorn
     # Deploy Traefik first
     - name: traefik
   # Apply patches for common configurations
