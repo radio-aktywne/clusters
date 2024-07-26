@@ -4,13 +4,13 @@ kind: Kustomization
 # Include the following resources
 resources:
   - emicast/emicast.yaml
+  - emifuse/emifuse.yaml
   - emipass/emipass.yaml
   - emirecords/emirecords.yaml
   - emischeduler/emischeduler.yaml
   - emishows/emishows.yaml
   - emistream/emistream.yaml
   - emitunes/emitunes.yaml
-  - fusion/fusion.yaml
   - podinfo/podinfo.yaml
   - webscheduler/webscheduler.yaml
   - webshows/webshows.yaml
