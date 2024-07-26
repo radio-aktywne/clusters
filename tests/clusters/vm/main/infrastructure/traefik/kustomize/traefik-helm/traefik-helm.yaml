@@ -37,14 +37,14 @@ spec:
           values:
             service:
               enabled: false
-    # Remove fusion-srt port
+    # Remove emifuse-srt port
     - target:
         group: helm.toolkit.fluxcd.io
         kind: HelmRelease
         name: traefik
       patch: |
         - op: remove
-          path: /spec/values/ports/fusion-srt
+          path: /spec/values/ports/emifuse-srt
     # Remove datashows-sql port
     - target:
         group: helm.toolkit.fluxcd.io

@@ -77,13 +77,13 @@ spec:
         # Enable TLS
         tls:
           enabled: true
-      # Port for fusion SRT traffic
-      fusion-srt:
+      # Port for emifuse SRT traffic
+      emifuse-srt:
         # Expose it outside the cluster
         expose: true
         # Expose it on this port
         exposedPort: 9999
-        # fusion SRT traffic uses UDP
+        # emifuse SRT traffic uses UDP
         protocol: UDP
         # Port to use inside the cluster
         port: 9999
@@ -106,7 +106,7 @@ spec:
         expose: true
         # Expose it on this port
         exposedPort: 9997
-        # fusion SRT traffic uses UDP
+        # emirecords SRT traffic uses UDP
         protocol: UDP
         # Port to use inside the cluster
         port: 9997
@@ -116,7 +116,7 @@ spec:
         expose: true
         # Expose it on this port
         exposedPort: 9996
-        # fusion SRT traffic uses UDP
+        # emistream SRT traffic uses UDP
         protocol: UDP
         # Port to use inside the cluster
         port: 9996
