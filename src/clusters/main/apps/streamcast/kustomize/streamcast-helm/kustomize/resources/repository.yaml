@@ -1,8 +1,0 @@
-# Create streamcast Helm repository
-apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: HelmRepository
-metadata:
-  name: radio-aktywne
-spec:
-  type: oci
-  url: oci://ghcr.io/radio-aktywne/charts

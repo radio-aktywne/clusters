@@ -1,0 +1,13 @@
+# Create emicast-helm Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: emicast-helm
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: tests/clusters/ci/main/apps/emicast/kustomize/emicast-helm/kustomize
+  dependsOn:
+    # Deploy namespace first
+    - name: emicast-namespace
+  # This key always needs to be here for patching to work
+  patches: []
