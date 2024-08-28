@@ -77,72 +77,62 @@ spec:
         # Enable TLS
         tls:
           enabled: true
-      # Port for emifuse SRT traffic
-      emifuse-srt:
-        # Expose it outside the cluster
-        expose: true
-        # Expose it on this port
-        exposedPort: 9999
-        # emifuse SRT traffic uses UDP
-        protocol: UDP
-        # Port to use inside the cluster
-        port: 9999
       # Port for datashows SQL traffic
       datashows-sql:
         # Expose it outside the cluster
         expose: true
         # Expose it on this port
-        exposedPort: 9998
+        exposedPort: 9999
         # datashows SQL traffic uses TCP
+        protocol: TCP
+        # Port to use inside the cluster
+        port: 9999
+        # Enable TLS passthrough
+        tls:
+          passthrough: true
+      # Port for datatunes SQL traffic
+      datatunes-sql:
+        # Expose it outside the cluster
+        expose: true
+        # Expose it on this port
+        exposedPort: 9998
+        # datatunes SQL traffic uses TCP
         protocol: TCP
         # Port to use inside the cluster
         port: 9998
         # Enable TLS passthrough
         tls:
           passthrough: true
-      # Port for emirecords SRT traffic
-      emirecords-srt:
+      # Port for emifuse SRT traffic
+      emifuse-srt:
         # Expose it outside the cluster
         expose: true
         # Expose it on this port
         exposedPort: 9997
-        # emirecords SRT traffic uses UDP
+        # emifuse SRT traffic uses UDP
         protocol: UDP
         # Port to use inside the cluster
         port: 9997
-      # Port for emistream SRT traffic
-      emistream-srt:
-        # Expose it outside the cluster
-        expose: true
-        # Expose it on this port
-        exposedPort: 9996
-        # emistream SRT traffic uses UDP
-        protocol: UDP
-        # Port to use inside the cluster
-        port: 9996
       # Port for emipass RTP traffic
       emipass-rtp:
         # Expose it outside the cluster
         expose: true
         # Expose it on this port
-        exposedPort: 9995
+        exposedPort: 9996
         # emipass RTP traffic uses UDP
         protocol: UDP
         # Port to use inside the cluster
-        port: 9995
-      # Port for datatunes SQL traffic
-      datatunes-sql:
+        port: 9996
+      # Port for emistream SRT traffic
+      emistream-srt:
         # Expose it outside the cluster
         expose: true
         # Expose it on this port
-        exposedPort: 9994
-        # datatunes SQL traffic uses TCP
-        protocol: TCP
+        exposedPort: 9995
+        # emistream SRT traffic uses UDP
+        protocol: UDP
         # Port to use inside the cluster
-        port: 9994
-        # Enable TLS passthrough
-        tls:
-          passthrough: true
+        port: 9995
     service:
       annotations:
         # Use static IP address for the service

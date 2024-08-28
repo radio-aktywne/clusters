@@ -1,0 +1,5 @@
+# Create mediarecords namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mediarecords
