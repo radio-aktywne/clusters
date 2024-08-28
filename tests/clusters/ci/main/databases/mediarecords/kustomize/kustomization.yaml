@@ -1,0 +1,8 @@
+# Create mediarecords Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+# Include the following resources
+resources:
+  - mediarecords-helm/mediarecords-helm.yaml
+  - mediarecords-namespace/mediarecords-namespace.yaml
+  - mediarecords-traefik/mediarecords-traefik.yaml

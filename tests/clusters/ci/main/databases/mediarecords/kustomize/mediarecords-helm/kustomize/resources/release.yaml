@@ -1,13 +1,13 @@
-# Create emischeduler Helm release
+# Create mediarecords Helm release
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: emischeduler
+  name: mediarecords
 spec:
   chart:
     spec:
       # Use this chart from the repository
-      chart: emischeduler
+      chart: mediarecords
       # Pin version to major
       version: "0.x"
       # Use this Helm repository
@@ -16,11 +16,3 @@ spec:
         name: radio-aktywne
   # This key always needs to be here for patching to work
   postRenderers: []
-  values:
-    volume:
-      # Use ReadWriteOnce access mode
-      access: ReadWriteOnce
-      # Use Longhorn storage class
-      class: longhorn
-      # Use 1 Gigabyte volume size
-      size: 1Gi

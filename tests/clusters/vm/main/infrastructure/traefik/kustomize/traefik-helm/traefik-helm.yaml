@@ -37,14 +37,6 @@ spec:
           values:
             service:
               enabled: false
-    # Remove emifuse-srt port
-    - target:
-        group: helm.toolkit.fluxcd.io
-        kind: HelmRelease
-        name: traefik
-      patch: |
-        - op: remove
-          path: /spec/values/ports/emifuse-srt
     # Remove datashows-sql port
     - target:
         group: helm.toolkit.fluxcd.io
@@ -53,30 +45,6 @@ spec:
       patch: |
         - op: remove
           path: /spec/values/ports/datashows-sql
-    # Remove emirecords-srt port
-    - target:
-        group: helm.toolkit.fluxcd.io
-        kind: HelmRelease
-        name: traefik
-      patch: |
-        - op: remove
-          path: /spec/values/ports/emirecords-srt
-    # Remove emistream-srt port
-    - target:
-        group: helm.toolkit.fluxcd.io
-        kind: HelmRelease
-        name: traefik
-      patch: |
-        - op: remove
-          path: /spec/values/ports/emistream-srt
-    # Remove emipass-rtp port
-    - target:
-        group: helm.toolkit.fluxcd.io
-        kind: HelmRelease
-        name: traefik
-      patch: |
-        - op: remove
-          path: /spec/values/ports/emipass-rtp
     # Remove datatunes-sql port
     - target:
         group: helm.toolkit.fluxcd.io
@@ -85,3 +53,27 @@ spec:
       patch: |
         - op: remove
           path: /spec/values/ports/datatunes-sql
+    # Remove emifuse-srt port
+    - target:
+        group: helm.toolkit.fluxcd.io
+        kind: HelmRelease
+        name: traefik
+      patch: |
+        - op: remove
+          path: /spec/values/ports/emifuse-srt
+    # Remove emipass-rtp port
+    - target:
+        group: helm.toolkit.fluxcd.io
+        kind: HelmRelease
+        name: traefik
+      patch: |
+        - op: remove
+          path: /spec/values/ports/emipass-rtp
+    # Remove emistream-srt port
+    - target:
+        group: helm.toolkit.fluxcd.io
+        kind: HelmRelease
+        name: traefik
+      patch: |
+        - op: remove
+          path: /spec/values/ports/emistream-srt
