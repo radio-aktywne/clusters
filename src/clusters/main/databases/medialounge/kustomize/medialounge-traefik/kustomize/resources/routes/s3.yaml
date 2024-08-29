@@ -1,0 +1,18 @@
+# Create S3 ingress route for medialounge
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: medialounge-s3
+spec:
+  entryPoints:
+    # Use entrypoint for HTTPS traffic
+    - https
+  routes:
+    # Match traffic with the Host header
+    - match: HostRegexp(`medialounge\..*`)
+      kind: Rule
+      services:
+        # Route traffic to the medialounge service
+        - name: medialounge
+          # This is the name of the port in the service
+          port: s3

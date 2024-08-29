@@ -16,7 +16,7 @@ spec:
       patch: |
         - op: remove
           path: /spec/dnsNames/1
-    # Remove *.mediarecords.k8s.radioaktywne.pl DNS name from certificate
+    # Remove *.medialounge.k8s.radioaktywne.pl DNS name from certificate
     - target:
         group: cert-manager.io
         kind: Certificate
@@ -24,3 +24,19 @@ spec:
       patch: |
         - op: remove
           path: /spec/dnsNames/2
+    # Remove *.mediarecords.k8s.radioaktywne.pl DNS name from certificate
+    - target:
+        group: cert-manager.io
+        kind: Certificate
+        name: certificate
+      patch: |
+        - op: remove
+          path: /spec/dnsNames/3
+    # Remove *.mediatunes.k8s.radioaktywne.pl DNS name from certificate
+    - target:
+        group: cert-manager.io
+        kind: Certificate
+        name: certificate
+      patch: |
+        - op: remove
+          path: /spec/dnsNames/4

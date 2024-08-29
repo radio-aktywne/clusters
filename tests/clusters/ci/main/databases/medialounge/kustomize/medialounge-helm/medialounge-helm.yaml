@@ -1,0 +1,13 @@
+# Create medialounge-helm Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: medialounge-helm
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: tests/clusters/ci/main/databases/medialounge/kustomize/medialounge-helm/kustomize
+  dependsOn:
+    # Deploy namespace first
+    - name: medialounge-namespace
+  # This key always needs to be here for patching to work
+  patches: []

@@ -1,0 +1,5 @@
+# Create medialounge namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: medialounge
