@@ -8,6 +8,7 @@ spec:
   dnsNames:
     - "*.k8s.radioaktywne.pl"
     - "*.emipass.k8s.radioaktywne.pl"
+    - "*.medialounge.k8s.radioaktywne.pl"
     - "*.mediarecords.k8s.radioaktywne.pl"
     - "*.mediatunes.k8s.radioaktywne.pl"
   # Use Certificate Authority to issue the certificate
