@@ -5,6 +5,7 @@ kind: Kustomization
 resources:
   - emicast/emicast.yaml
   - emifuse/emifuse.yaml
+  - emilounge/emilounge.yaml
   - emipass/emipass.yaml
   - emirecords/emirecords.yaml
   - emischeduler/emischeduler.yaml
