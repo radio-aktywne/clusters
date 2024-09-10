@@ -13,6 +13,7 @@ resources:
   - emistream/emistream.yaml
   - emitunes/emitunes.yaml
   - podinfo/podinfo.yaml
+  - webfuse/webfuse.yaml
   - webscheduler/webscheduler.yaml
   - webshows/webshows.yaml
   - webstream/webstream.yaml
