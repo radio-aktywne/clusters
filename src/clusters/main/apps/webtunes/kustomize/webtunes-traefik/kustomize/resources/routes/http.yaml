@@ -1,0 +1,18 @@
+# Create HTTP ingress route for webtunes
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: webtunes-http
+spec:
+  entryPoints:
+    # Use entrypoint for HTTPS traffic
+    - https
+  routes:
+    # Match traffic with the Host header
+    - match: HostRegexp(`webtunes\..*`)
+      kind: Rule
+      services:
+        # Route traffic to the webtunes service
+        - name: webtunes
+          # This is the name of the port in the service
+          port: http

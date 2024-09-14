@@ -17,6 +17,7 @@ resources:
   - webscheduler/webscheduler.yaml
   - webshows/webshows.yaml
   - webstream/webstream.yaml
+  - webtunes/webtunes.yaml
 # Apply patches for common configurations
 patches:
   # Set patch to add labels to all resources in nested Kustomizations
