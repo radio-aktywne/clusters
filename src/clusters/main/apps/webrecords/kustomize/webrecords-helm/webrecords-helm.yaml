@@ -1,0 +1,13 @@
+# Create webrecords-helm Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: webrecords-helm
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: src/clusters/main/apps/webrecords/kustomize/webrecords-helm/kustomize
+  dependsOn:
+    # Deploy namespace first
+    - name: webrecords-namespace
+  # This key always needs to be here for patching to work
+  patches: []
