@@ -14,6 +14,7 @@ resources:
   - emitunes/emitunes.yaml
   - podinfo/podinfo.yaml
   - webfuse/webfuse.yaml
+  - webrecords/webrecords.yaml
   - webscheduler/webscheduler.yaml
   - webshows/webshows.yaml
   - webstream/webstream.yaml
