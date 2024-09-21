@@ -1,0 +1,5 @@
+# Create weblounge namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: weblounge
