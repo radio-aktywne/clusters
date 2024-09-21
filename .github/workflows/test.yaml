@@ -31,7 +31,7 @@ jobs:
     # Pin version of Ubuntu to avoid breaking changes
     runs-on: ubuntu-22.04
     # Use reasonable timeout to avoid stuck workflows
-    timeout-minutes: 30
+    timeout-minutes: 60
     strategy:
       matrix:
         cluster: [main]
@@ -88,7 +88,7 @@ jobs:
           'tests/clusters/ci/${{ matrix.cluster }}'
           --wait
           --timeout
-          20m
+          30m
       - name: Debug failures
         if: failure()
         run: |
