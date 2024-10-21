@@ -1,0 +1,25 @@
+# Create quokka Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: quokka
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: src/clusters/main/services/quokka/kustomize
+  dependsOn:
+    # Deploy Traefik first
+    - name: traefik
+  # Apply patches for common configurations
+  # This key always needs to be here for patching to work
+  patches:
+    # Set target namespace
+    - target:
+        group: kustomize.toolkit.fluxcd.io
+        kind: Kustomization
+        name: .*
+      patch: |
+        kind: .
+        metadata:
+          name: .
+        spec:
+          targetNamespace: quokka

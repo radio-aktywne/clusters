@@ -1,0 +1,13 @@
+# Create tulip-traefik Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: tulip-traefik
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: src/clusters/main/apps/tulip/kustomize/tulip-traefik/kustomize
+  dependsOn:
+    # Deploy Helm release first
+    - name: tulip-helm
+  # This key always needs to be here for patching to work
+  patches: []

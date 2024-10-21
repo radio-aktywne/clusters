@@ -1,0 +1,13 @@
+# Create dingo-traefik Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: dingo-traefik
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: src/clusters/main/services/dingo/kustomize/dingo-traefik/kustomize
+  dependsOn:
+    # Deploy Helm release first
+    - name: dingo-helm
+  # This key always needs to be here for patching to work
+  patches: []

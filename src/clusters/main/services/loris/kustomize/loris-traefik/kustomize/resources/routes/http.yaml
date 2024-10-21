@@ -1,0 +1,18 @@
+# Create HTTP ingress route for loris
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: loris-http
+spec:
+  entryPoints:
+    # Use entrypoint for HTTPS traffic
+    - https
+  routes:
+    # Match traffic with the Host header
+    - match: HostRegexp(`loris\..*`)
+      kind: Rule
+      services:
+        # Route traffic to the loris service
+        - name: loris
+          # This is the name of the port in the service
+          port: http

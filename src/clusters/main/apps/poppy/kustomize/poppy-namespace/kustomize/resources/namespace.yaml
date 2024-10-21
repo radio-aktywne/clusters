@@ -1,0 +1,5 @@
+# Create poppy namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: poppy

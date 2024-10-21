@@ -1,0 +1,5 @@
+# Overlay poppy-helm Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../../../../../../../../src/clusters/main/apps/poppy/kustomize/poppy-helm/kustomize

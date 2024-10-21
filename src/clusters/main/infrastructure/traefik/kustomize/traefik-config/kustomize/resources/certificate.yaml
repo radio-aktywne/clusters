@@ -7,10 +7,10 @@ spec:
   # Include the following DNS names in the Subject Alt Name field
   dnsNames:
     - "*.k8s.radioaktywne.pl"
-    - "*.emipass.k8s.radioaktywne.pl"
-    - "*.medialounge.k8s.radioaktywne.pl"
-    - "*.mediarecords.k8s.radioaktywne.pl"
-    - "*.mediatunes.k8s.radioaktywne.pl"
+    - "*.amber.k8s.radioaktywne.pl"
+    - "*.emerald.k8s.radioaktywne.pl"
+    - "*.loris.k8s.radioaktywne.pl"
+    - "*.minium.k8s.radioaktywne.pl"
   # Use Certificate Authority to issue the certificate
   issuerRef:
     name: issuer

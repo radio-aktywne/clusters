@@ -37,43 +37,43 @@ spec:
           values:
             service:
               enabled: false
-    # Remove datashows-sql port
+    # Remove dingo-srt port
     - target:
         group: helm.toolkit.fluxcd.io
         kind: HelmRelease
         name: traefik
       patch: |
         - op: remove
-          path: /spec/values/ports/datashows-sql
-    # Remove datatunes-sql port
+          path: /spec/values/ports/dingo-srt
+    # Remove graphite-sql port
     - target:
         group: helm.toolkit.fluxcd.io
         kind: HelmRelease
         name: traefik
       patch: |
         - op: remove
-          path: /spec/values/ports/datatunes-sql
-    # Remove emifuse-srt port
+          path: /spec/values/ports/graphite-sql
+    # Remove loris-rtp port
     - target:
         group: helm.toolkit.fluxcd.io
         kind: HelmRelease
         name: traefik
       patch: |
         - op: remove
-          path: /spec/values/ports/emifuse-srt
-    # Remove emipass-rtp port
+          path: /spec/values/ports/loris-rtp
+    # Remove octopus-srt port
     - target:
         group: helm.toolkit.fluxcd.io
         kind: HelmRelease
         name: traefik
       patch: |
         - op: remove
-          path: /spec/values/ports/emipass-rtp
-    # Remove emistream-srt port
+          path: /spec/values/ports/octopus-srt
+    # Remove sapphire-sql port
     - target:
         group: helm.toolkit.fluxcd.io
         kind: HelmRelease
         name: traefik
       patch: |
         - op: remove
-          path: /spec/values/ports/emistream-srt
+          path: /spec/values/ports/sapphire-sql

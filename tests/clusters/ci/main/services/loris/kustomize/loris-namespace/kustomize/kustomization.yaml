@@ -1,0 +1,5 @@
+# Overlay loris-namespace Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../../../../../../../../src/clusters/main/services/loris/kustomize/loris-namespace/kustomize

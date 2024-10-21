@@ -1,0 +1,5 @@
+# Create tulip namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: tulip

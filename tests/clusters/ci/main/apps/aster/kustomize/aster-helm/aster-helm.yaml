@@ -1,0 +1,13 @@
+# Create aster-helm Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: aster-helm
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: tests/clusters/ci/main/apps/aster/kustomize/aster-helm/kustomize
+  dependsOn:
+    # Deploy namespace first
+    - name: aster-namespace
+  # This key always needs to be here for patching to work
+  patches: []

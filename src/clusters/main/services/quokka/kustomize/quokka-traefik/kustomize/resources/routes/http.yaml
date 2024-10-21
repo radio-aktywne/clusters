@@ -1,0 +1,18 @@
+# Create HTTP ingress route for quokka
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: quokka-http
+spec:
+  entryPoints:
+    # Use entrypoint for HTTPS traffic
+    - https
+  routes:
+    # Match traffic with the Host header
+    - match: HostRegexp(`quokka\..*`)
+      kind: Rule
+      services:
+        # Route traffic to the quokka service
+        - name: quokka
+          # This is the name of the port in the service
+          port: http

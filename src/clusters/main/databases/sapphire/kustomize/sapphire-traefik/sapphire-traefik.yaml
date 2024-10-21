@@ -1,0 +1,13 @@
+# Create sapphire-traefik Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: sapphire-traefik
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: src/clusters/main/databases/sapphire/kustomize/sapphire-traefik/kustomize
+  dependsOn:
+    # Deploy Helm release first
+    - name: sapphire-helm
+  # This key always needs to be here for patching to work
+  patches: []

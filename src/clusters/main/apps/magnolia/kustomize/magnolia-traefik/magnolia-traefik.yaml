@@ -1,0 +1,13 @@
+# Create magnolia-traefik Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: magnolia-traefik
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: src/clusters/main/apps/magnolia/kustomize/magnolia-traefik/kustomize
+  dependsOn:
+    # Deploy Helm release first
+    - name: magnolia-helm
+  # This key always needs to be here for patching to work
+  patches: []

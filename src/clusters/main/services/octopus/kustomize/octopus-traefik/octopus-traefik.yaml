@@ -1,0 +1,13 @@
+# Create octopus-traefik Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: octopus-traefik
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: src/clusters/main/services/octopus/kustomize/octopus-traefik/kustomize
+  dependsOn:
+    # Deploy Helm release first
+    - name: octopus-helm
+  # This key always needs to be here for patching to work
+  patches: []
