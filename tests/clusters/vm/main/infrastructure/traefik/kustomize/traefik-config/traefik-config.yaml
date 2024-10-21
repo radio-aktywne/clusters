@@ -8,7 +8,7 @@ spec:
   path: tests/clusters/vm/main/infrastructure/traefik/kustomize/traefik-config/kustomize
   # This key always needs to be here for patching to work
   patches:
-    # Remove *.emipass.k8s.radioaktywne.pl DNS name from certificate
+    # Remove *.amber.k8s.radioaktywne.pl DNS name from certificate
     - target:
         group: cert-manager.io
         kind: Certificate
@@ -16,7 +16,7 @@ spec:
       patch: |
         - op: remove
           path: /spec/dnsNames/1
-    # Remove *.medialounge.k8s.radioaktywne.pl DNS name from certificate
+    # Remove *.emerald.k8s.radioaktywne.pl DNS name from certificate
     - target:
         group: cert-manager.io
         kind: Certificate
@@ -24,7 +24,7 @@ spec:
       patch: |
         - op: remove
           path: /spec/dnsNames/2
-    # Remove *.mediarecords.k8s.radioaktywne.pl DNS name from certificate
+    # Remove *.loris.k8s.radioaktywne.pl DNS name from certificate
     - target:
         group: cert-manager.io
         kind: Certificate
@@ -32,7 +32,7 @@ spec:
       patch: |
         - op: remove
           path: /spec/dnsNames/3
-    # Remove *.mediatunes.k8s.radioaktywne.pl DNS name from certificate
+    # Remove *.minium.k8s.radioaktywne.pl DNS name from certificate
     - target:
         group: cert-manager.io
         kind: Certificate

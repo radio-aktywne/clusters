@@ -77,62 +77,62 @@ spec:
         # Enable TLS
         tls:
           enabled: true
-      # Port for datashows SQL traffic
-      datashows-sql:
+      # Port for dingo SRT traffic
+      dingo-srt:
         # Expose it outside the cluster
         expose: true
         # Expose it on this port
         exposedPort: 9999
-        # datashows SQL traffic uses TCP
-        protocol: TCP
+        # dingo SRT traffic uses UDP
+        protocol: UDP
         # Port to use inside the cluster
         port: 9999
-        # Enable TLS passthrough
-        tls:
-          passthrough: true
-      # Port for datatunes SQL traffic
-      datatunes-sql:
+      # Port for graphite SQL traffic
+      graphite-sql:
         # Expose it outside the cluster
         expose: true
         # Expose it on this port
         exposedPort: 9998
-        # datatunes SQL traffic uses TCP
+        # graphite SQL traffic uses TCP
         protocol: TCP
         # Port to use inside the cluster
         port: 9998
         # Enable TLS passthrough
         tls:
           passthrough: true
-      # Port for emifuse SRT traffic
-      emifuse-srt:
+      # Port for loris RTP traffic
+      loris-rtp:
         # Expose it outside the cluster
         expose: true
         # Expose it on this port
         exposedPort: 9997
-        # emifuse SRT traffic uses UDP
+        # loris RTP traffic uses UDP
         protocol: UDP
         # Port to use inside the cluster
         port: 9997
-      # Port for emipass RTP traffic
-      emipass-rtp:
+      # Port for octopus SRT traffic
+      octopus-srt:
         # Expose it outside the cluster
         expose: true
         # Expose it on this port
         exposedPort: 9996
-        # emipass RTP traffic uses UDP
+        # octopus SRT traffic uses UDP
         protocol: UDP
         # Port to use inside the cluster
         port: 9996
-      # Port for emistream SRT traffic
-      emistream-srt:
+      # Port for sapphire SQL traffic
+      sapphire-sql:
         # Expose it outside the cluster
         expose: true
         # Expose it on this port
         exposedPort: 9995
-        # emistream SRT traffic uses UDP
-        protocol: UDP
+        # sapphire SQL traffic uses TCP
+        protocol: TCP
         # Port to use inside the cluster
         port: 9995
+        # Enable TLS passthrough
+        tls:
+          passthrough: true
     service:
       annotations:
         # Use static IP address for the service

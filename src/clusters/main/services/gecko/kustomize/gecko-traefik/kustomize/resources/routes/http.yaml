@@ -1,0 +1,18 @@
+# Create HTTP ingress route for gecko
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: gecko-http
+spec:
+  entryPoints:
+    # Use entrypoint for HTTPS traffic
+    - https
+  routes:
+    # Match traffic with the Host header
+    - match: HostRegexp(`gecko\..*`)
+      kind: Rule
+      services:
+        # Route traffic to the gecko service
+        - name: gecko
+          # This is the name of the port in the service
+          port: http

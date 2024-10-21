@@ -1,0 +1,5 @@
+# Create minium namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: minium

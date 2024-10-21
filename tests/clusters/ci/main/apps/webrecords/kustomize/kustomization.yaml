@@ -1,8 +1,0 @@
-# Create webrecords Kustomization
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-# Include the following resources
-resources:
-  - webrecords-helm/webrecords-helm.yaml
-  - webrecords-namespace/webrecords-namespace.yaml
-  - webrecords-traefik/webrecords-traefik.yaml

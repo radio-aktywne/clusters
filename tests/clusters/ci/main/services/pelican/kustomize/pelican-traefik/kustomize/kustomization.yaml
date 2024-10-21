@@ -1,0 +1,5 @@
+# Overlay pelican-traefik Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../../../../../../../../src/clusters/main/services/pelican/kustomize/pelican-traefik/kustomize

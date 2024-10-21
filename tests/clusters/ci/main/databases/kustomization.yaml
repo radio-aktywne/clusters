@@ -3,12 +3,12 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 # Include the following resources
 resources:
-  - datashows/datashows.yaml
-  - datatimes/datatimes.yaml
-  - datatunes/datatunes.yaml
-  - medialounge/medialounge.yaml
-  - mediarecords/mediarecords.yaml
-  - mediatunes/mediatunes.yaml
+  - amber/amber.yaml
+  - emerald/emerald.yaml
+  - graphite/graphite.yaml
+  - howlite/howlite.yaml
+  - minium/minium.yaml
+  - sapphire/sapphire.yaml
 # Apply patches for common configurations
 patches:
   # Set patch to add labels to all resources in nested Kustomizations

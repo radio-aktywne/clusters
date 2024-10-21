@@ -1,0 +1,8 @@
+# Create beaver Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+# Include the following resources
+resources:
+  - beaver-helm/beaver-helm.yaml
+  - beaver-namespace/beaver-namespace.yaml
+  - beaver-traefik/beaver-traefik.yaml

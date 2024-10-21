@@ -1,0 +1,8 @@
+# Create amber Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+# Include the following resources
+resources:
+  - amber-helm/amber-helm.yaml
+  - amber-namespace/amber-namespace.yaml
+  - amber-traefik/amber-traefik.yaml

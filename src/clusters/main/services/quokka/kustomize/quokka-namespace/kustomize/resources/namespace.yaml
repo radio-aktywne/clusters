@@ -1,0 +1,5 @@
+# Create quokka namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: quokka

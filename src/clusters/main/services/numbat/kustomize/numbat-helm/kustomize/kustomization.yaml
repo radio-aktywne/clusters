@@ -1,0 +1,17 @@
+# Create numbat-helm Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+# Include the following configuration files
+configurations:
+  - configurations/names.yaml
+# Include the following resources
+resources:
+  - resources/release.yaml
+  - resources/repository.yaml
+# Generate secrets
+secretGenerator:
+  - files:
+      # It's important to include extension in the key
+      # SOPS will use it to determine the format of the content
+      - values.yaml=secrets/values.yaml
+    name: numbat-helm-secrets-values

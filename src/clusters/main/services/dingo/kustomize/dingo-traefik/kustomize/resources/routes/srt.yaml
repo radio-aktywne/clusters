@@ -1,0 +1,15 @@
+# Create SRT ingress route for dingo
+apiVersion: traefik.io/v1alpha1
+kind: IngressRouteUDP
+metadata:
+  name: dingo-srt
+spec:
+  entryPoints:
+    # Use entrypoint for dingo SRT traffic
+    - dingo-srt
+  routes:
+    - services:
+        # Route traffic to the dingo service
+        - name: dingo
+          # This is the name of the port in the service
+          port: srt

@@ -1,0 +1,15 @@
+# Create RTP ingress route for loris
+apiVersion: traefik.io/v1alpha1
+kind: IngressRouteUDP
+metadata:
+  name: loris-rtp
+spec:
+  entryPoints:
+    # Use entrypoint for loris RTP traffic
+    - loris-rtp
+  routes:
+    - services:
+        # Route traffic to the loris service
+        - name: loris
+          # This is the name of the port in the service
+          port: rtp

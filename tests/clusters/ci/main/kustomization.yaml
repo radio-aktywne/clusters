@@ -6,6 +6,7 @@ resources:
   - apps
   - databases
   - infrastructure
+  - services
 # Apply patches for common configurations
 patches:
   # Set namespace for Kustomizations

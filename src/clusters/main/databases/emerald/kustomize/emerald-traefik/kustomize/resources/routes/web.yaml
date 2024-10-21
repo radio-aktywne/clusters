@@ -1,0 +1,18 @@
+# Create web ingress route for emerald
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: emerald-web
+spec:
+  entryPoints:
+    # Use entrypoint for HTTPS traffic
+    - https
+  routes:
+    # Match traffic with the Host header
+    - match: HostRegexp(`web\.emerald\..*`)
+      kind: Rule
+      services:
+        # Route traffic to the emerald service
+        - name: emerald
+          # This is the name of the port in the service
+          port: web

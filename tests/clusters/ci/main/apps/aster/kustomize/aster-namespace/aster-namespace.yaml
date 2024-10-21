@@ -1,0 +1,10 @@
+# Create aster-namespace Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: aster-namespace
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: tests/clusters/ci/main/apps/aster/kustomize/aster-namespace/kustomize
+  # This key always needs to be here for patching to work
+  patches: []

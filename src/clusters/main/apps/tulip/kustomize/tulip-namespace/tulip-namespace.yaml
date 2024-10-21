@@ -1,0 +1,10 @@
+# Create tulip-namespace Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: tulip-namespace
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: src/clusters/main/apps/tulip/kustomize/tulip-namespace/kustomize
+  # This key always needs to be here for patching to work
+  patches: []

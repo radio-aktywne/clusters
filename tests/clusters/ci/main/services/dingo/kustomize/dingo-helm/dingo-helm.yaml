@@ -1,0 +1,13 @@
+# Create dingo-helm Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: dingo-helm
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: tests/clusters/ci/main/services/dingo/kustomize/dingo-helm/kustomize
+  dependsOn:
+    # Deploy namespace first
+    - name: dingo-namespace
+  # This key always needs to be here for patching to work
+  patches: []

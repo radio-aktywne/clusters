@@ -3,23 +3,14 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 # Include the following resources
 resources:
-  - emicast/emicast.yaml
-  - emifuse/emifuse.yaml
-  - emilounge/emilounge.yaml
-  - emipass/emipass.yaml
-  - emirecords/emirecords.yaml
-  - emischeduler/emischeduler.yaml
-  - emishows/emishows.yaml
-  - emistream/emistream.yaml
-  - emitunes/emitunes.yaml
+  - aster/aster.yaml
+  - daisy/daisy.yaml
+  - jasmine/jasmine.yaml
+  - lotus/lotus.yaml
+  - magnolia/magnolia.yaml
   - podinfo/podinfo.yaml
-  - webfuse/webfuse.yaml
-  - weblounge/weblounge.yaml
-  - webrecords/webrecords.yaml
-  - webscheduler/webscheduler.yaml
-  - webshows/webshows.yaml
-  - webstream/webstream.yaml
-  - webtunes/webtunes.yaml
+  - poppy/poppy.yaml
+  - tulip/tulip.yaml
 # Apply patches for common configurations
 patches:
   # Set patch to add labels to all resources in nested Kustomizations

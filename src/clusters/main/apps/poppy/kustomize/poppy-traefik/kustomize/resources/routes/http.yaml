@@ -1,0 +1,18 @@
+# Create HTTP ingress route for poppy
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: poppy-http
+spec:
+  entryPoints:
+    # Use entrypoint for HTTPS traffic
+    - https
+  routes:
+    # Match traffic with the Host header
+    - match: HostRegexp(`poppy\..*`)
+      kind: Rule
+      services:
+        # Route traffic to the poppy service
+        - name: poppy
+          # This is the name of the port in the service
+          port: http

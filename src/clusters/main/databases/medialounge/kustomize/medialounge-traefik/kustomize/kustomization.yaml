@@ -1,7 +1,0 @@
-# Create medialounge-traefik Kustomization
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-# Include the following resources
-resources:
-  - resources/routes/s3.yaml
-  - resources/routes/web.yaml

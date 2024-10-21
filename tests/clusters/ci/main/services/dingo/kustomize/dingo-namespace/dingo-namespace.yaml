@@ -1,0 +1,10 @@
+# Create dingo-namespace Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: dingo-namespace
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: tests/clusters/ci/main/services/dingo/kustomize/dingo-namespace/kustomize
+  # This key always needs to be here for patching to work
+  patches: []

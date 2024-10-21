@@ -1,5 +1,0 @@
-# Overlay webfuse-traefik Kustomization
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-resources:
-  - ../../../../../../../../../src/clusters/main/apps/webfuse/kustomize/webfuse-traefik/kustomize

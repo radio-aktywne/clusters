@@ -1,0 +1,18 @@
+# Create HTTP ingress route for aster
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: aster-http
+spec:
+  entryPoints:
+    # Use entrypoint for HTTPS traffic
+    - https
+  routes:
+    # Match traffic with the Host header
+    - match: HostRegexp(`aster\..*`)
+      kind: Rule
+      services:
+        # Route traffic to the aster service
+        - name: aster
+          # This is the name of the port in the service
+          port: http

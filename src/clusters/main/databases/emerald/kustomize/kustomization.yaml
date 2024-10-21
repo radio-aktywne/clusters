@@ -1,0 +1,8 @@
+# Create emerald Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+# Include the following resources
+resources:
+  - emerald-helm/emerald-helm.yaml
+  - emerald-namespace/emerald-namespace.yaml
+  - emerald-traefik/emerald-traefik.yaml

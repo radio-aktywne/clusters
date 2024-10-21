@@ -1,0 +1,18 @@
+# Create HTTP ingress route for pelican
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: pelican-http
+spec:
+  entryPoints:
+    # Use entrypoint for HTTPS traffic
+    - https
+  routes:
+    # Match traffic with the Host header
+    - match: HostRegexp(`pelican\..*`)
+      kind: Rule
+      services:
+        # Route traffic to the pelican service
+        - name: pelican
+          # This is the name of the port in the service
+          port: http

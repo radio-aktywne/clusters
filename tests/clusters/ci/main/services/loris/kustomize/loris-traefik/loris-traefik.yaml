@@ -1,0 +1,13 @@
+# Create loris-traefik Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: loris-traefik
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: tests/clusters/ci/main/services/loris/kustomize/loris-traefik/kustomize
+  dependsOn:
+    # Deploy Helm release first
+    - name: loris-helm
+  # This key always needs to be here for patching to work
+  patches: []

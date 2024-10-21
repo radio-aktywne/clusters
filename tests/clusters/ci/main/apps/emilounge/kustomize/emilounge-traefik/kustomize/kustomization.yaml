@@ -1,5 +1,0 @@
-# Overlay emilounge-traefik Kustomization
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-resources:
-  - ../../../../../../../../../src/clusters/main/apps/emilounge/kustomize/emilounge-traefik/kustomize
