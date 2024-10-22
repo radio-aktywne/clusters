@@ -17,7 +17,7 @@ spec:
   # This key always needs to be here for patching to work
   postRenderers: []
   values:
-    database:
+    amber:
       urls:
         web: https://web.amber.k8s.radioaktywne.pl
     volume:
