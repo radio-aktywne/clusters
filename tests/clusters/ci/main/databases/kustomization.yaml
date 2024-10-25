@@ -4,6 +4,7 @@ kind: Kustomization
 # Include the following resources
 resources:
   - amber/amber.yaml
+  - diamond/diamond.yaml
   - emerald/emerald.yaml
   - graphite/graphite.yaml
   - howlite/howlite.yaml
