@@ -1,0 +1,13 @@
+# Create diamond-traefik Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: diamond-traefik
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: tests/clusters/ci/main/databases/diamond/kustomize/diamond-traefik/kustomize
+  dependsOn:
+    # Deploy Helm release first
+    - name: diamond-helm
+  # This key always needs to be here for patching to work
+  patches: []

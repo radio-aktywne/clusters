@@ -77,3 +77,11 @@ spec:
       patch: |
         - op: remove
           path: /spec/values/ports/sapphire-sql
+    # Remove diamond-sql port
+    - target:
+        group: helm.toolkit.fluxcd.io
+        kind: HelmRelease
+        name: traefik
+      patch: |
+        - op: remove
+          path: /spec/values/ports/diamond-sql
