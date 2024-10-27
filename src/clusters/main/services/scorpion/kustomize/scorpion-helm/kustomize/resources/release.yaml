@@ -1,0 +1,36 @@
+# Create scorpion Helm release
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: scorpion
+spec:
+  chart:
+    spec:
+      # Use this chart from the repository
+      chart: scorpion
+      # Pin version to major
+      version: "0.x"
+      # Use this Helm repository
+      sourceRef:
+        kind: HelmRepository
+        name: radio-aktywne
+  # This key always needs to be here for patching to work
+  postRenderers: []
+  values:
+    scorpion:
+      cookies:
+        domain: radioaktywne.pl
+      urls:
+        issuer: https://scorpion.k8s.radioaktywne.pl
+        public: https://scorpion.k8s.radioaktywne.pl
+        admin: https://admin.scorpion.k8s.radioaktywne.pl
+      crocus:
+        public:
+          scheme: https
+          host: crocus.k8s.radioaktywne.pl
+          port: null
+      debug: false
+  valuesFrom:
+    - kind: Secret
+      name: scorpion-helm-secrets-values
+      valuesKey: values.yaml

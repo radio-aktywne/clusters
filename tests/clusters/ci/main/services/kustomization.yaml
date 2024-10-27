@@ -12,6 +12,7 @@ resources:
   - octopus/octopus.yaml
   - pelican/pelican.yaml
   - quokka/quokka.yaml
+  - scorpion/scorpion.yaml
 # Apply patches for common configurations
 patches:
   # Set patch to add labels to all resources in nested Kustomizations

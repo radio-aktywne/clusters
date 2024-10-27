@@ -1,0 +1,13 @@
+# Create scorpion-traefik Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: scorpion-traefik
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: src/clusters/main/services/scorpion/kustomize/scorpion-traefik/kustomize
+  dependsOn:
+    # Deploy Helm release first
+    - name: scorpion-helm
+  # This key always needs to be here for patching to work
+  patches: []
