@@ -1,0 +1,18 @@
+# Create HTTP ingress route for crocus
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: crocus-http
+spec:
+  entryPoints:
+    # Use entrypoint for HTTPS traffic
+    - https
+  routes:
+    # Match traffic with the Host header
+    - match: HostRegexp(`crocus\..*`)
+      kind: Rule
+      services:
+        # Route traffic to the crocus service
+        - name: crocus
+          # This is the name of the port in the service
+          port: http

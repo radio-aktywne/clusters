@@ -4,6 +4,7 @@ kind: Kustomization
 # Include the following resources
 resources:
   - aster/aster.yaml
+  - crocus/crocus.yaml
   - daisy/daisy.yaml
   - jasmine/jasmine.yaml
   - lotus/lotus.yaml
