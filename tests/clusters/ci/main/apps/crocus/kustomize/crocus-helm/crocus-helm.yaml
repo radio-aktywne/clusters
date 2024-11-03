@@ -1,0 +1,13 @@
+# Create crocus-helm Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: crocus-helm
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: tests/clusters/ci/main/apps/crocus/kustomize/crocus-helm/kustomize
+  dependsOn:
+    # Deploy namespace first
+    - name: crocus-namespace
+  # This key always needs to be here for patching to work
+  patches: []
