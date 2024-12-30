@@ -11,6 +11,7 @@ spec:
     - "*.emerald.k8s.radioaktywne.pl"
     - "*.loris.k8s.radioaktywne.pl"
     - "*.minium.k8s.radioaktywne.pl"
+    - "*.scorpion.k8s.radioaktywne.pl"
   # Use Certificate Authority to issue the certificate
   issuerRef:
     name: issuer
