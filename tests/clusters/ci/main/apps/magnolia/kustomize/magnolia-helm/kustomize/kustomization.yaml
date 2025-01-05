@@ -1,5 +1,7 @@
-# Overlay magnolia-helm Kustomization
+# Create magnolia-helm Kustomization
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+# Include the following resources
 resources:
-  - ../../../../../../../../../src/clusters/main/apps/magnolia/kustomize/magnolia-helm/kustomize
+  - resources/release.yaml
+  - resources/repository.yaml

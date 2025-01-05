@@ -16,19 +16,3 @@ spec:
         name: radio-aktywne
   # This key always needs to be here for patching to work
   postRenderers: []
-  values:
-    magnolia:
-      cookies:
-        domain: radioaktywne.pl
-      urls:
-        public: https://magnolia.k8s.radioaktywne.pl
-      scorpion:
-        public:
-          scheme: https
-          host: scorpion.k8s.radioaktywne.pl
-          port: null
-      debug: false
-  valuesFrom:
-    - kind: Secret
-      name: magnolia-helm-secrets-values
-      valuesKey: values.yaml
