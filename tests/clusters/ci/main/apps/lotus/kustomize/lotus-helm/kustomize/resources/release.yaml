@@ -16,19 +16,3 @@ spec:
         name: radio-aktywne
   # This key always needs to be here for patching to work
   postRenderers: []
-  values:
-    lotus:
-      cookies:
-        domain: radioaktywne.pl
-      urls:
-        public: https://lotus.k8s.radioaktywne.pl
-      scorpion:
-        public:
-          scheme: https
-          host: scorpion.k8s.radioaktywne.pl
-          port: null
-      debug: false
-  valuesFrom:
-    - kind: Secret
-      name: lotus-helm-secrets-values
-      valuesKey: values.yaml
