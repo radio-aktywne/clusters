@@ -18,8 +18,6 @@ spec:
   postRenderers: []
   values:
     lotus:
-      cookies:
-        domain: radioaktywne.pl
       urls:
         public: https://lotus.k8s.radioaktywne.pl
       scorpion:

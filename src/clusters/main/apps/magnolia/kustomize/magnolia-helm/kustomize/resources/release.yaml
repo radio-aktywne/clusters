@@ -18,8 +18,6 @@ spec:
   postRenderers: []
   values:
     magnolia:
-      cookies:
-        domain: radioaktywne.pl
       urls:
         public: https://magnolia.k8s.radioaktywne.pl
       scorpion:
