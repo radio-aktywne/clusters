@@ -18,8 +18,6 @@ spec:
   postRenderers: []
   values:
     scorpion:
-      cookies:
-        domain: radioaktywne.pl
       urls:
         issuer: https://scorpion.k8s.radioaktywne.pl
         public: https://scorpion.k8s.radioaktywne.pl

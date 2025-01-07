@@ -18,8 +18,6 @@ spec:
   postRenderers: []
   values:
     aster:
-      cookies:
-        domain: radioaktywne.pl
       urls:
         public: https://aster.k8s.radioaktywne.pl
       scorpion:
