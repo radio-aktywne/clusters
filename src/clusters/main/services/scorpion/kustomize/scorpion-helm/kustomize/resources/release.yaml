@@ -27,6 +27,21 @@ spec:
           scheme: https
           host: crocus.k8s.radioaktywne.pl
           port: null
+      clients:
+        aster:
+          url: https://aster.k8s.radioaktywne.pl
+        daisy:
+          url: https://daisy.k8s.radioaktywne.pl
+        jasmine:
+          url: https://jasmine.k8s.radioaktywne.pl
+        lotus:
+          url: https://lotus.k8s.radioaktywne.pl
+        magnolia:
+          url: https://magnolia.k8s.radioaktywne.pl
+        poppy:
+          url: https://poppy.k8s.radioaktywne.pl
+        tulip:
+          url: https://tulip.k8s.radioaktywne.pl
       debug: false
   valuesFrom:
     - kind: Secret
