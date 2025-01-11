@@ -8,6 +8,7 @@ resources:
   - metallb/metallb.yaml
   - metrics/metrics.yaml
   - traefik/traefik.yaml
+  - trust-manager/trust-manager.yaml
 # Apply patches for common configurations
 patches:
   # Set patch to add labels to all resources in nested Kustomizations
