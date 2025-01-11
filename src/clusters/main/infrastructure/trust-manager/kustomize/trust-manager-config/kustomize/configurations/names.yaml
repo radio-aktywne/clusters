@@ -1,0 +1,8 @@
+# Configure names transformer
+nameReference:
+  - kind: Secret
+    fieldSpecs:
+      # Replace secret names in Bundle
+      - group: trust.cert-manager.io
+        kind: Bundle
+        path: spec/sources/secret/name

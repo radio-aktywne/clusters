@@ -1,0 +1,5 @@
+# Create trust-manager namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: trust-manager

@@ -1,0 +1,23 @@
+# Create Bundle
+apiVersion: trust.cert-manager.io/v1alpha1
+kind: Bundle
+metadata:
+  name: trust-manager-certificates-bundle
+spec:
+  # Include certificates from all the sources
+  sources:
+    # Use certificate from this secret
+    - secret:
+        key: ca.crt
+        name: trust-manager-config-secrets-certificates
+  # Distribute certificates to all the targets
+  target:
+    # Distribute certificates to ConfigMaps
+    configMap:
+      # Use this key in the ConfigMap
+      key: certificates.crt
+    # Distribute only to selected namespaces
+    namespaceSelector:
+      matchLabels:
+        # Select namespaces with this label
+        trust-manager-certificates: "true"
