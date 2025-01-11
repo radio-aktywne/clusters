@@ -26,6 +26,23 @@ spec:
           host: scorpion.k8s.radioaktywne.pl
           port: null
       debug: false
+    container:
+      spec:
+        env:
+          # Add extra certificates for Node.js to trust
+          - name: NODE_EXTRA_CA_CERTS
+            value: /app/certs/certificates.crt
+        volumeMounts:
+          # Mount trust-manager certificates
+          - name: trust-manager-certificates
+            mountPath: /app/certs/
+            readOnly: true
+    pod:
+      spec:
+        volumes:
+          - name: trust-manager-certificates
+            configMap:
+              name: trust-manager-certificates-bundle
   valuesFrom:
     - kind: Secret
       name: tulip-helm-secrets-values

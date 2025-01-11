@@ -7,4 +7,11 @@ spec:
   # Path inside repository to a directory containing Kustomization files
   path: tests/clusters/ci/main/apps/tulip/kustomize/tulip-namespace/kustomize
   # This key always needs to be here for patching to work
-  patches: []
+  patches:
+    # Remove trust-manager label from tulip namespace
+    - target:
+        kind: Namespace
+        name: tulip
+      patch: |
+        - op: remove
+          path: /metadata/labels/trust-manager-certificates

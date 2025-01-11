@@ -9,6 +9,8 @@ spec:
   dependsOn:
     # Deploy Traefik first
     - name: traefik
+    # Deploy trust-manager first
+    - name: trust-manager
   # Apply patches for common configurations
   # This key always needs to be here for patching to work
   patches:
