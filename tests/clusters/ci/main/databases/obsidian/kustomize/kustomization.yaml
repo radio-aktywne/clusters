@@ -1,0 +1,8 @@
+# Create obsidian Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+# Include the following resources
+resources:
+  - obsidian-helm/obsidian-helm.yaml
+  - obsidian-namespace/obsidian-namespace.yaml
+  - obsidian-traefik/obsidian-traefik.yaml

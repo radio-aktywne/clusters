@@ -146,6 +146,19 @@ spec:
         # Enable TLS passthrough
         tls:
           passthrough: true
+      # Port for obsidian SQL traffic
+      obsidian-sql:
+        # Expose it outside the cluster
+        expose: true
+        # Expose it on this port
+        exposedPort: 9993
+        # obsidian SQL traffic uses TCP
+        protocol: TCP
+        # Port to use inside the cluster
+        port: 9993
+        # Enable TLS passthrough
+        tls:
+          passthrough: true
     service:
       annotations:
         # Use static IP address for the service
