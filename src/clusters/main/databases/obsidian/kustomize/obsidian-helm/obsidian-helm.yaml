@@ -1,0 +1,13 @@
+# Create obsidian-helm Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: obsidian-helm
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: src/clusters/main/databases/obsidian/kustomize/obsidian-helm/kustomize
+  dependsOn:
+    # Deploy namespace first
+    - name: obsidian-namespace
+  # This key always needs to be here for patching to work
+  patches: []
