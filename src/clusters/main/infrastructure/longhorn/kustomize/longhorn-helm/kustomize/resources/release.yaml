@@ -45,6 +45,8 @@ spec:
       defaultClassReplicaCount: 1
       # Use data locality when possible by default
       defaultDataLocality: best-effort
+      # Don't delete volumes when volume claims are deleted
+      reclaimPolicy: Retain
     preUpgradeChecker:
       # Disable the pre-upgrade checker
       jobEnabled: false
