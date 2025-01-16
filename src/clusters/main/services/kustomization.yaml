@@ -5,6 +5,7 @@ kind: Kustomization
 resources:
   - beaver/beaver.yaml
   - dingo/dingo.yaml
+  - falcon/falcon.yaml
   - gecko/gecko.yaml
   - loris/loris.yaml
   - mantis/mantis.yaml

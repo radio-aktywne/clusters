@@ -1,0 +1,18 @@
+# Create public ingress route for falcon
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: falcon-public
+spec:
+  entryPoints:
+    # Use entrypoint for HTTPS traffic
+    - https
+  routes:
+    # Match traffic with the Host header
+    - match: HostRegexp(`falcon\..*`)
+      kind: Rule
+      services:
+        # Route traffic to the falcon service
+        - name: falcon
+          # This is the name of the port in the service
+          port: public

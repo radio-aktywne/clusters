@@ -1,0 +1,33 @@
+# Create falcon Helm release
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: falcon
+spec:
+  chart:
+    spec:
+      # Use this chart from the repository
+      chart: falcon
+      # Pin version to major
+      version: "0.x"
+      # Use this Helm repository
+      sourceRef:
+        kind: HelmRepository
+        name: radio-aktywne
+  # This key always needs to be here for patching to work
+  postRenderers: []
+  values:
+    falcon:
+      urls:
+        public: https://falcon.k8s.radioaktywne.pl
+        admin: https://admin.falcon.k8s.radioaktywne.pl
+      orchid:
+        public:
+          scheme: https
+          host: orchid.k8s.radioaktywne.pl
+          port: null
+      debug: false
+  valuesFrom:
+    - kind: Secret
+      name: falcon-helm-secrets-values
+      valuesKey: values.yaml
