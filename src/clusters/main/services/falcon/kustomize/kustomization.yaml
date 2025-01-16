@@ -1,0 +1,8 @@
+# Create falcon Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+# Include the following resources
+resources:
+  - falcon-helm/falcon-helm.yaml
+  - falcon-namespace/falcon-namespace.yaml
+  - falcon-traefik/falcon-traefik.yaml

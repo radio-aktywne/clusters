@@ -9,6 +9,7 @@ spec:
     - "*.k8s.radioaktywne.pl"
     - "*.amber.k8s.radioaktywne.pl"
     - "*.emerald.k8s.radioaktywne.pl"
+    - "*.falcon.k8s.radioaktywne.pl"
     - "*.loris.k8s.radioaktywne.pl"
     - "*.minium.k8s.radioaktywne.pl"
     - "*.scorpion.k8s.radioaktywne.pl"
