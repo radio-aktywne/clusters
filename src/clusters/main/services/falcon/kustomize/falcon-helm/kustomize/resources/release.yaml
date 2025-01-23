@@ -26,6 +26,9 @@ spec:
           scheme: https
           host: orchid.k8s.radioaktywne.pl
           port: null
+      oidc:
+        google:
+          domain: radioaktywne.pl
       debug: false
   valuesFrom:
     - kind: Secret
