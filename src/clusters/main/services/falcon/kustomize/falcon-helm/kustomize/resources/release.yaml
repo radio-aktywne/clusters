@@ -21,6 +21,8 @@ spec:
       urls:
         public: https://falcon.k8s.radioaktywne.pl
         admin: https://admin.falcon.k8s.radioaktywne.pl
+      cookies:
+        domain: radioaktywne.pl
       orchid:
         public:
           scheme: https
