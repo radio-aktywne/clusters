@@ -1,0 +1,8 @@
+# Create orchid namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: orchid
+  labels:
+    # Distribute trust-manager certificates to this namespace
+    trust-manager-certificates: "true"

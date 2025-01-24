@@ -1,0 +1,18 @@
+# Create HTTP ingress route for orchid
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: orchid-http
+spec:
+  entryPoints:
+    # Use entrypoint for HTTPS traffic
+    - https
+  routes:
+    # Match traffic with the Host header
+    - match: HostRegexp(`orchid\..*`)
+      kind: Rule
+      services:
+        # Route traffic to the orchid service
+        - name: orchid
+          # This is the name of the port in the service
+          port: http

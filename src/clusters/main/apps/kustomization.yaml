@@ -9,6 +9,7 @@ resources:
   - jasmine/jasmine.yaml
   - lotus/lotus.yaml
   - magnolia/magnolia.yaml
+  - orchid/orchid.yaml
   - podinfo/podinfo.yaml
   - poppy/poppy.yaml
   - tulip/tulip.yaml
