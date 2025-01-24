@@ -16,6 +16,13 @@ spec:
         name: radio-aktywne
   # This key always needs to be here for patching to work
   postRenderers: []
+  values:
+    crocus:
+      orchid:
+        public:
+          scheme: https
+          host: orchid.k8s.radioaktywne.pl
+          port: null
   valuesFrom:
     - kind: Secret
       name: crocus-helm-secrets-values
