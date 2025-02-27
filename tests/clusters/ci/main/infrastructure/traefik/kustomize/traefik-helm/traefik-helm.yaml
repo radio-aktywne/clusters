@@ -29,7 +29,7 @@ spec:
           path: /spec/values/service/loadBalancerClass
     # Disable Traefik LoadBalancer service
     - patch: |
-        apiVersion: helm.toolkit.fluxcd.io/v2beta1
+        apiVersion: helm.toolkit.fluxcd.io/v2
         kind: HelmRelease
         metadata:
           name: traefik
