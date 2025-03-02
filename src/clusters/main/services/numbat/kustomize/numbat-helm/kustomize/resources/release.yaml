@@ -16,6 +16,9 @@ spec:
         name: radio-aktywne
   # This key always needs to be here for patching to work
   postRenderers: []
+  values:
+    numbat:
+      debug: false
   valuesFrom:
     - kind: Secret
       name: numbat-helm-secrets-values

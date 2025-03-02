@@ -17,6 +17,8 @@ spec:
   # This key always needs to be here for patching to work
   postRenderers: []
   values:
+    mantis:
+      debug: false
     volume:
       # Use ReadWriteOnce access mode
       access: ReadWriteOnce
