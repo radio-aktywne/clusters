@@ -16,6 +16,9 @@ spec:
         name: radio-aktywne
   # This key always needs to be here for patching to work
   postRenderers: []
+  values:
+    gecko:
+      debug: false
   valuesFrom:
     - kind: Secret
       name: gecko-helm-secrets-values
