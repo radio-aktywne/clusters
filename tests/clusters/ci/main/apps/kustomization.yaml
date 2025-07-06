@@ -6,12 +6,12 @@ kind: Kustomization
 # Uncomment the ones you need to test at a time
 resources:
   # - aster/aster.yaml
-  - crocus/crocus.yaml
+  # - crocus/crocus.yaml
   # - daisy/daisy.yaml
   # - jasmine/jasmine.yaml
   # - lotus/lotus.yaml
   # - magnolia/magnolia.yaml
-  - orchid/orchid.yaml
+  # - orchid/orchid.yaml
   - podinfo/podinfo.yaml
   # - poppy/poppy.yaml
   # - tulip/tulip.yaml
