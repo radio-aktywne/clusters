@@ -2,18 +2,18 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 # Include the following resources
-resources:
-  - beaver/beaver.yaml
-  - dingo/dingo.yaml
-  - falcon/falcon.yaml
-  - gecko/gecko.yaml
-  - loris/loris.yaml
-  - mantis/mantis.yaml
-  - numbat/numbat.yaml
-  - octopus/octopus.yaml
-  - pelican/pelican.yaml
-  - quokka/quokka.yaml
-  - scorpion/scorpion.yaml
+resources: []
+#   - beaver/beaver.yaml
+#   - dingo/dingo.yaml
+#   - falcon/falcon.yaml
+#   - gecko/gecko.yaml
+#   - loris/loris.yaml
+#   - mantis/mantis.yaml
+#   - numbat/numbat.yaml
+#   - octopus/octopus.yaml
+#   - pelican/pelican.yaml
+#   - quokka/quokka.yaml
+#   - scorpion/scorpion.yaml
 # Apply patches for common configurations
 patches:
   # Set patch to add labels to all resources in nested Kustomizations

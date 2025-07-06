@@ -4,15 +4,15 @@ kind: Kustomization
 # Include the following resources
 # Some resources are commented out to avoid creating too many resources in CI
 # Uncomment the ones you need to test at a time
-resources:
-  # - amber/amber.yaml
-  - diamond/diamond.yaml
-  # - emerald/emerald.yaml
-  # - graphite/graphite.yaml
-  # - howlite/howlite.yaml
-  # - minium/minium.yaml
-  - obsidian/obsidian.yaml
-  # - sapphire/sapphire.yaml
+resources: []
+#   - amber/amber.yaml
+#   - diamond/diamond.yaml
+#   - emerald/emerald.yaml
+#   - graphite/graphite.yaml
+#   - howlite/howlite.yaml
+#   - minium/minium.yaml
+#   - obsidian/obsidian.yaml
+#   - sapphire/sapphire.yaml
 # Apply patches for common configurations
 patches:
   # Set patch to add labels to all resources in nested Kustomizations

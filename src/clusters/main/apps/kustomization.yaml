@@ -3,16 +3,16 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 # Include the following resources
 resources:
-  - aster/aster.yaml
-  - crocus/crocus.yaml
-  - daisy/daisy.yaml
-  - jasmine/jasmine.yaml
-  - lotus/lotus.yaml
-  - magnolia/magnolia.yaml
-  - orchid/orchid.yaml
+  # - aster/aster.yaml
+  # - crocus/crocus.yaml
+  # - daisy/daisy.yaml
+  # - jasmine/jasmine.yaml
+  # - lotus/lotus.yaml
+  # - magnolia/magnolia.yaml
+  # - orchid/orchid.yaml
   - podinfo/podinfo.yaml
-  - poppy/poppy.yaml
-  - tulip/tulip.yaml
+  # - poppy/poppy.yaml
+  # - tulip/tulip.yaml
 # Apply patches for common configurations
 patches:
   # Set patch to add labels to all resources in nested Kustomizations
