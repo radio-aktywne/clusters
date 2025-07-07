@@ -97,9 +97,6 @@ spec:
         protocol: TCP
         # Port to use inside the cluster
         port: 9998
-        # Enable TLS passthrough
-        tls:
-          passthrough: true
       # Port for loris RTP traffic
       loris-rtp:
         # Expose it outside the cluster
@@ -130,9 +127,6 @@ spec:
         protocol: TCP
         # Port to use inside the cluster
         port: 9995
-        # Enable TLS passthrough
-        tls:
-          passthrough: true
       # Port for diamond SQL traffic
       diamond-sql:
         # Expose it outside the cluster
@@ -143,9 +137,6 @@ spec:
         protocol: TCP
         # Port to use inside the cluster
         port: 9994
-        # Enable TLS passthrough
-        tls:
-          passthrough: true
       # Port for obsidian SQL traffic
       obsidian-sql:
         # Expose it outside the cluster
@@ -156,9 +147,6 @@ spec:
         protocol: TCP
         # Port to use inside the cluster
         port: 9993
-        # Enable TLS passthrough
-        tls:
-          passthrough: true
     service:
       annotations:
         # Use static IP address for the service
