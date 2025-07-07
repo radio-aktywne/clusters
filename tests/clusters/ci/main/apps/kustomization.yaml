@@ -4,6 +4,8 @@ kind: Kustomization
 # Include the following resources
 # Some resources are commented out to avoid creating too many resources in CI
 # Uncomment the ones you need to test at a time
+# Or uncomment only the following line to not include any resources
+# resources: []
 resources:
   # - aster/aster.yaml
   # - crocus/crocus.yaml
