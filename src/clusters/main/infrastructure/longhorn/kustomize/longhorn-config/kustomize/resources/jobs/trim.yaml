@@ -1,0 +1,15 @@
+# Create trim job
+apiVersion: longhorn.io/v1beta2
+kind: RecurringJob
+metadata:
+  name: trim
+spec:
+  # Don't allow concurrent jobs
+  concurrency: 1
+  # Run every week at midnight on Sunday
+  cron: "0 0 * * 0"
+  # Apply to all volumes by default
+  groups:
+    - default
+  # Trim the filesystem
+  task: filesystem-trim

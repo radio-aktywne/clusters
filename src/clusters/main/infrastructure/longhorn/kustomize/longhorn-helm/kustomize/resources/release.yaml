@@ -27,14 +27,14 @@ spec:
       # Use only 1 replica of snapshotter
       snapshotterReplicaCount: 1
     defaultSettings:
+      # Allow taking snapshots or backups of detached volumes
+      allowRecurringJobWhileVolumeDetached: true
       # Store data only on labeled nodes
       createDefaultDiskLabeledNodes: true
       # Use data locality when possible by default
       defaultDataLocality: best-effort
       # Use only 1 replica by default
       defaultReplicaCount: 1
-      # Limit the number of snapshots to 2
-      snapshotMaxCount: 2
     longhornUI:
       # Use only 1 replica of Longhorn UI
       replicas: 1
