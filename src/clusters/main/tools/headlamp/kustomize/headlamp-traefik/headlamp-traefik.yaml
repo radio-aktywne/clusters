@@ -9,5 +9,7 @@ spec:
   dependsOn:
     # Deploy Helm release first
     - name: headlamp-helm
+    # Deploy Traefik first
+    - name: traefik
   # This key always needs to be here for patching to work
   patches: []

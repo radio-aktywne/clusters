@@ -9,5 +9,7 @@ spec:
   dependsOn:
     # Deploy namespace first
     - name: lotus-namespace
+    # Deploy trust-manager first
+    - name: trust-manager
   # This key always needs to be here for patching to work
   patches: []

@@ -9,5 +9,7 @@ spec:
   dependsOn:
     # Deploy namespace first
     - name: trust-manager-namespace
+    # Deploy cert-manager first
+    - name: cert-manager
   # This key always needs to be here for patching to work
   patches: []

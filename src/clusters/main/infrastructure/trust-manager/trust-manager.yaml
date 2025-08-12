@@ -6,9 +6,6 @@ metadata:
 spec:
   # Path inside repository to a directory containing Kustomization files
   path: src/clusters/main/infrastructure/trust-manager/kustomize
-  dependsOn:
-    # Deploy cert-manager first
-    - name: cert-manager
   # Apply patches for common configurations
   # This key always needs to be here for patching to work
   patches:

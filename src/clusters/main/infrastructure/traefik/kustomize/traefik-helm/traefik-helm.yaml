@@ -9,5 +9,7 @@ spec:
   dependsOn:
     # Deploy namespace first
     - name: traefik-namespace
+    # Deploy MetalLB first
+    - name: metallb
   # This key always needs to be here for patching to work
   patches: []
