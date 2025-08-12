@@ -6,6 +6,11 @@ metadata:
 spec:
   # Path inside repository to a directory containing Kustomization files
   path: tests/clusters/vm/main/infrastructure/traefik/kustomize/traefik-config/kustomize
+  dependsOn:
+    # Deploy Helm release first
+    - name: traefik-helm
+    # Deploy cert-manager first
+    - name: cert-manager
   # This key always needs to be here for patching to work
   patches:
     # Remove *.scorpion.k8s.radioaktywne.pl DNS name from certificate

@@ -9,5 +9,7 @@ spec:
   dependsOn:
     # Deploy namespace first
     - name: amber-namespace
+    # Deploy Longhorn first
+    - name: longhorn
   # This key always needs to be here for patching to work
   patches: []

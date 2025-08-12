@@ -6,11 +6,6 @@ metadata:
 spec:
   # Path inside repository to a directory containing Kustomization files
   path: src/clusters/main/databases/amber/kustomize
-  dependsOn:
-    # Deploy Longhorn first
-    - name: longhorn
-    # Deploy Traefik first
-    - name: traefik
   # Apply patches for common configurations
   # This key always needs to be here for patching to work
   patches:
