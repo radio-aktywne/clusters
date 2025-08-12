@@ -5,3 +5,4 @@ kind: Kustomization
 resources:
   - longhorn-helm/longhorn-helm.yaml
   - longhorn-namespace/longhorn-namespace.yaml
+  - longhorn-traefik/longhorn-traefik.yaml
