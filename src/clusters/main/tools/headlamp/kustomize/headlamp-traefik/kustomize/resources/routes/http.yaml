@@ -1,0 +1,18 @@
+# Create HTTP ingress route for headlamp
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: headlamp-http
+spec:
+  entryPoints:
+    # Use entrypoint for HTTPS traffic
+    - https
+  routes:
+    # Match traffic with the Host header
+    - match: HostRegexp(`headlamp\..*`)
+      kind: Rule
+      services:
+        # Route traffic to the headlamp service
+        - name: headlamp
+          # This is the name of the port in the service
+          port: http
