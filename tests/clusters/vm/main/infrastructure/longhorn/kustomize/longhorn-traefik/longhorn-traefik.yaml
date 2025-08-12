@@ -1,0 +1,15 @@
+# Create longhorn-traefik Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: longhorn-traefik
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: tests/clusters/vm/main/infrastructure/longhorn/kustomize/longhorn-traefik/kustomize
+  dependsOn:
+    # Deploy Helm release first
+    - name: longhorn-helm
+    # Deploy Traefik first
+    - name: traefik
+  # This key always needs to be here for patching to work
+  patches: []

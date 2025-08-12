@@ -1,0 +1,18 @@
+# Create HTTP ingress route for longhorn
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: longhorn-http
+spec:
+  entryPoints:
+    # Use entrypoint for HTTPS traffic
+    - https
+  routes:
+    # Match traffic with the Host header
+    - match: HostRegexp(`longhorn\..*`)
+      kind: Rule
+      services:
+        # Route traffic to the longhorn-frontend service
+        - name: longhorn-frontend
+          # This is the name of the port in the service
+          port: http
