@@ -20,15 +20,15 @@ spec:
     # Use Traefik v3
     image:
       tag: "v3.0"
-    # Additional arguments for the traefik binary
-    additionalArguments:
-      # Allow backends to use self-signed certificates
-      - --serversTransport.insecureSkipVerify=true
-      - --tcpServersTransport.tls.insecureSkipVerify=true
     # Disable the dashboard
     ingressRoute:
       dashboard:
         enabled: false
+    # Logging
+    logs:
+      access:
+        # Enable access logs
+        enabled: true
     # Disable Prometheus metrics
     metrics:
       prometheus: false
