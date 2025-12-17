@@ -18,7 +18,7 @@ spec:
         group: cert-manager.io
         kind: Certificate
         name: certificate
-      patch: |
+      patch: |-
         - op: remove
           path: /spec/dnsNames/6
     # Remove *.minium.k8s.radioaktywne.pl DNS name from certificate
@@ -26,7 +26,7 @@ spec:
         group: cert-manager.io
         kind: Certificate
         name: certificate
-      patch: |
+      patch: |-
         - op: remove
           path: /spec/dnsNames/5
     # Remove *.loris.k8s.radioaktywne.pl DNS name from certificate
@@ -34,7 +34,7 @@ spec:
         group: cert-manager.io
         kind: Certificate
         name: certificate
-      patch: |
+      patch: |-
         - op: remove
           path: /spec/dnsNames/4
     # Remove *.falcon.k8s.radioaktywne.pl DNS name from certificate
@@ -42,7 +42,7 @@ spec:
         group: cert-manager.io
         kind: Certificate
         name: certificate
-      patch: |
+      patch: |-
         - op: remove
           path: /spec/dnsNames/3
     # Remove *.emerald.k8s.radioaktywne.pl DNS name from certificate
@@ -50,7 +50,7 @@ spec:
         group: cert-manager.io
         kind: Certificate
         name: certificate
-      patch: |
+      patch: |-
         - op: remove
           path: /spec/dnsNames/2
     # Remove *.amber.k8s.radioaktywne.pl DNS name from certificate
@@ -58,6 +58,6 @@ spec:
         group: cert-manager.io
         kind: Certificate
         name: certificate
-      patch: |
+      patch: |-
         - op: remove
           path: /spec/dnsNames/1

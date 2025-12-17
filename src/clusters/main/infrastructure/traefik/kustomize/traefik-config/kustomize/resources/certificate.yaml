@@ -15,7 +15,7 @@ spec:
     - "*.scorpion.k8s.radioaktywne.pl"
   # Use Certificate Authority to issue the certificate
   issuerRef:
-    name: issuer
+    name: ca
     kind: ClusterIssuer
   # Store the certificate in the following secret
   # This secret will be created automatically by cert-manager

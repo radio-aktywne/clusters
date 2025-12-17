@@ -9,7 +9,7 @@ spec:
       # Use this chart from the repository
       chart: traefik
       # Pin version to major
-      version: "26.x"
+      version: "37.x"
       # Use this Helm repository
       sourceRef:
         kind: HelmRepository
@@ -17,44 +17,47 @@ spec:
   # This key always needs to be here for patching to work
   postRenderers: []
   values:
-    # Use Traefik v3
+    # Use Traefik v3.6
     image:
-      tag: "v3.0"
-    # Disable the dashboard
-    ingressRoute:
-      dashboard:
-        enabled: false
+      tag: "v3.6"
     # Logging
     logs:
       access:
         # Enable access logs
         enabled: true
+      general:
+        # Set log level to DEBUG
+        level: DEBUG
     # Disable Prometheus metrics
     metrics:
-      prometheus: false
+      prometheus: null
     # Entrypoints
     ports:
       # Disable default ports
-      web: false
-      websecure: false
-      metrics: false
+      web: null
+      websecure: null
+      metrics: null
       # Port for HTTP traffic
       http:
         # Expose it outside the cluster
-        expose: true
+        expose:
+          default: true
         # Expose it on this port
         exposedPort: 80
         # HTTP traffic uses TCP
         protocol: TCP
         # Port to use inside the cluster
-        port: 8080
+        port: 8000
         # Redirect to HTTPS
-        redirectTo:
-          port: https
+        redirections:
+          entryPoint:
+            to: https
+            scheme: https
       # Port for HTTPS traffic
       https:
         # Expose it outside the cluster
-        expose: true
+        expose:
+          default: true
         # Expose it on this port
         exposedPort: 443
         # Secure web traffic uses TCP
@@ -67,7 +70,8 @@ spec:
       # Port for TLS over TCP traffic
       tls-tcp:
         # Expose it outside the cluster
-        expose: true
+        expose:
+          default: true
         # Expose it on this port
         exposedPort: 10000
         # TCP traffic uses TCP
@@ -80,7 +84,8 @@ spec:
       # Port for dingo SRT traffic
       dingo-srt:
         # Expose it outside the cluster
-        expose: true
+        expose:
+          default: true
         # Expose it on this port
         exposedPort: 9999
         # dingo SRT traffic uses UDP
@@ -90,7 +95,8 @@ spec:
       # Port for graphite SQL traffic
       graphite-sql:
         # Expose it outside the cluster
-        expose: true
+        expose:
+          default: true
         # Expose it on this port
         exposedPort: 9998
         # graphite SQL traffic uses TCP
@@ -100,7 +106,8 @@ spec:
       # Port for loris RTP traffic
       loris-rtp:
         # Expose it outside the cluster
-        expose: true
+        expose:
+          default: true
         # Expose it on this port
         exposedPort: 9997
         # loris RTP traffic uses UDP
@@ -110,7 +117,8 @@ spec:
       # Port for octopus SRT traffic
       octopus-srt:
         # Expose it outside the cluster
-        expose: true
+        expose:
+          default: true
         # Expose it on this port
         exposedPort: 9996
         # octopus SRT traffic uses UDP
@@ -120,7 +128,8 @@ spec:
       # Port for sapphire SQL traffic
       sapphire-sql:
         # Expose it outside the cluster
-        expose: true
+        expose:
+          default: true
         # Expose it on this port
         exposedPort: 9995
         # sapphire SQL traffic uses TCP
@@ -130,7 +139,8 @@ spec:
       # Port for diamond SQL traffic
       diamond-sql:
         # Expose it outside the cluster
-        expose: true
+        expose:
+          default: true
         # Expose it on this port
         exposedPort: 9994
         # diamond SQL traffic uses TCP
@@ -140,7 +150,8 @@ spec:
       # Port for obsidian SQL traffic
       obsidian-sql:
         # Expose it outside the cluster
-        expose: true
+        expose:
+          default: true
         # Expose it on this port
         exposedPort: 9993
         # obsidian SQL traffic uses TCP

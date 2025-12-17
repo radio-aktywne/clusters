@@ -24,7 +24,7 @@ patches:
   - target:
       group: kustomize.toolkit.fluxcd.io
       kind: Kustomization
-    patch: |
+    patch: |-
       - op: add
         path: /spec/patches/-
         value:
@@ -32,7 +32,7 @@ patches:
             group: kustomize.toolkit.fluxcd.io
             kind: Kustomization
             name: .*
-          patch: |
+          patch: |-
             kind: .
             metadata:
               name: .
@@ -45,20 +45,20 @@ patches:
   - target:
       group: kustomize.toolkit.fluxcd.io
       kind: Kustomization
-    patch: |
+    patch: |-
       - op: add
         path: /spec/patches/-
         value:
           target:
             group: kustomize.toolkit.fluxcd.io
             kind: Kustomization
-          patch: |
+          patch: |-
             - op: add
               path: /spec/patches/-
               value:
                 target:
                   kind: HelmRelease
-                patch: |
+                patch: |-
                   - op: add
                     path: /spec/postRenderers/-
                     value:
@@ -66,7 +66,7 @@ patches:
                         patches:
                           - target:
                               name: .*
-                            patch: |
+                            patch: |-
                               kind: .
                               metadata:
                                 name: .
@@ -76,7 +76,7 @@ patches:
                               group: apps
                               kind: Deployment
                               name: .*
-                            patch: |
+                            patch: |-
                               kind: .
                               metadata:
                                 name: .
@@ -89,7 +89,7 @@ patches:
                               group: apps
                               kind: ReplicaSet
                               name: .*
-                            patch: |
+                            patch: |-
                               kind: .
                               metadata:
                                 name: .
@@ -102,7 +102,7 @@ patches:
                               group: apps
                               kind: StatefulSet
                               name: .*
-                            patch: |
+                            patch: |-
                               kind: .
                               metadata:
                                 name: .
@@ -115,7 +115,7 @@ patches:
                               group: apps
                               kind: DaemonSet
                               name: .*
-                            patch: |
+                            patch: |-
                               kind: .
                               metadata:
                                 name: .
@@ -128,7 +128,7 @@ patches:
                               group: batch
                               kind: Job
                               name: .*
-                            patch: |
+                            patch: |-
                               kind: .
                               metadata:
                                 name: .
@@ -141,7 +141,7 @@ patches:
                               group: batch
                               kind: CronJob
                               name: .*
-                            patch: |
+                            patch: |-
                               kind: .
                               metadata:
                                 name: .
@@ -155,7 +155,7 @@ patches:
                           - target:
                               kind: ReplicationController
                               name: .*
-                            patch: |
+                            patch: |-
                               kind: .
                               metadata:
                                 name: .

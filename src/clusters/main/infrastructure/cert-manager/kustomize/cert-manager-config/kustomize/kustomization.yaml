@@ -6,10 +6,10 @@ configurations:
   - configurations/names.yaml
 # Include the following resources
 resources:
-  - resources/issuer.yaml
+  - resources/issuers/ca.yaml
 # Generate secrets
 secretGenerator:
   - files:
       - tls.crt=secrets/tls.crt
       - tls.key=secrets/tls.key
-    name: cert-manager-config-secrets-issuer
+    name: cert-manager-config-secrets-tls

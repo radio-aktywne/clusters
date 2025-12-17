@@ -16,7 +16,7 @@ spec:
         group: helm.toolkit.fluxcd.io
         kind: HelmRelease
         name: traefik
-      patch: |
+      patch: |-
         - op: remove
           path: /spec/values/service/annotations/metallb.universe.tf~1loadBalancerIPs
     # Remove loadBalancerClass from Traefik service
@@ -24,11 +24,11 @@ spec:
         group: helm.toolkit.fluxcd.io
         kind: HelmRelease
         name: traefik
-      patch: |
+      patch: |-
         - op: remove
           path: /spec/values/service/loadBalancerClass
     # Disable Traefik LoadBalancer service
-    - patch: |
+    - patch: |-
         apiVersion: helm.toolkit.fluxcd.io/v2
         kind: HelmRelease
         metadata:
