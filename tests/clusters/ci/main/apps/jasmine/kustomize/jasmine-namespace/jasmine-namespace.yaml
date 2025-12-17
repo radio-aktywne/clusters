@@ -12,6 +12,6 @@ spec:
     - target:
         kind: Namespace
         name: jasmine
-      patch: |
+      patch: |-
         - op: remove
           path: /metadata/labels/trust-manager-certificates

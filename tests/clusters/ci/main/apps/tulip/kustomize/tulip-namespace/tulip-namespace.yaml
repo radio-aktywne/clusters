@@ -12,6 +12,6 @@ spec:
     - target:
         kind: Namespace
         name: tulip
-      patch: |
+      patch: |-
         - op: remove
           path: /metadata/labels/trust-manager-certificates

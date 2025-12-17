@@ -9,7 +9,7 @@ spec:
       # Use this chart from the repository
       chart: metallb
       # Pin version to minor
-      version: "0.14.x"
+      version: "0.15.x"
       # Use this Helm repository
       sourceRef:
         kind: HelmRepository
