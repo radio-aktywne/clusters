@@ -18,11 +18,12 @@ spec:
   postRenderers: []
   values:
     crocus:
-      orchid:
-        public:
-          scheme: https
+      debug: false
+      urls:
+        orchid:
           host: orchid.k8s.radioaktywne.pl
           port: null
+          scheme: https
   valuesFrom:
     - kind: Secret
       name: crocus-helm-secrets-values
