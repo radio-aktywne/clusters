@@ -18,38 +18,19 @@ spec:
   postRenderers: []
   values:
     orchid:
-      urls:
-        public: https://orchid.k8s.radioaktywne.pl
-      falcon:
-        public:
-          scheme: https
-          host: falcon.k8s.radioaktywne.pl
-          port: null
-      crocus:
-        public:
-          scheme: https
-          host: crocus.k8s.radioaktywne.pl
-          port: null
+      debug: false
       oidc:
         google:
           domain: radioaktywne.pl
-    container:
-      spec:
-        env:
-          # Add extra certificates for Node.js to trust
-          - name: NODE_EXTRA_CA_CERTS
-            value: /app/certs/certificates.crt
-        volumeMounts:
-          # Mount trust-manager certificates
-          - name: trust-manager-certificates
-            mountPath: /app/certs/
-            readOnly: true
-    pod:
-      spec:
-        volumes:
-          - name: trust-manager-certificates
-            configMap:
-              name: trust-manager-certificates-bundle
+      urls:
+        crocus:
+          host: crocus.k8s.radioaktywne.pl
+          port: null
+          scheme: https
+        falcon:
+          host: falcon.k8s.radioaktywne.pl
+          port: null
+          scheme: https
   valuesFrom:
     - kind: Secret
       name: orchid-helm-secrets-values

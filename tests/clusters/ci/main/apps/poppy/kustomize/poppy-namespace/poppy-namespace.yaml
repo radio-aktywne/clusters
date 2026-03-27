@@ -7,11 +7,4 @@ spec:
   # Path inside repository to a directory containing Kustomization files
   path: tests/clusters/ci/main/apps/poppy/kustomize/poppy-namespace/kustomize
   # This key always needs to be here for patching to work
-  patches:
-    # Remove trust-manager label from poppy namespace
-    - target:
-        kind: Namespace
-        name: poppy
-      patch: |-
-        - op: remove
-          path: /metadata/labels/trust-manager-certificates
+  patches: []
