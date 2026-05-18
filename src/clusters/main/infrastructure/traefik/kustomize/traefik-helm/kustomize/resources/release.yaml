@@ -17,6 +17,10 @@ spec:
   # This key always needs to be here for patching to work
   postRenderers: []
   values:
+    env:
+      # Add extra certificates to trust
+      - name: SSL_CERT_DIR
+        value: /etc/ssl/certs/:/certs/
     # Experimental features
     experimental:
       # Plugins
@@ -176,3 +180,8 @@ spec:
         metallb.universe.tf/loadBalancerIPs: 10.21.37.126
       # Use MetalLB LoadBalancer
       loadBalancerClass: metallb
+    volumes:
+      # Mount trust-manager certificates
+      - mountPath: /certs/
+        name: trust-manager-certificates-bundle
+        type: configMap

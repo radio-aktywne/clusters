@@ -37,3 +37,19 @@ spec:
           values:
             service:
               enabled: false
+    # Remove trust-manager certificates volume
+    - target:
+        group: helm.toolkit.fluxcd.io
+        kind: HelmRelease
+        name: traefik
+      patch: |-
+        - op: remove
+          path: /spec/values/volumes/0
+    # Remove certificates directory environment variable
+    - target:
+        group: helm.toolkit.fluxcd.io
+        kind: HelmRelease
+        name: traefik
+      patch: |-
+        - op: remove
+          path: /spec/values/env/0

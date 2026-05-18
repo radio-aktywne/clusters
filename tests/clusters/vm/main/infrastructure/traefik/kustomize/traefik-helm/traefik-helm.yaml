@@ -37,6 +37,30 @@ spec:
           values:
             service:
               enabled: false
+    # Remove OIDC plugin
+    - target:
+        group: helm.toolkit.fluxcd.io
+        kind: HelmRelease
+        name: traefik
+      patch: |-
+        - op: remove
+          path: /spec/values/experimental/plugins/traefikoidc
+    # Remove trust-manager certificates volume
+    - target:
+        group: helm.toolkit.fluxcd.io
+        kind: HelmRelease
+        name: traefik
+      patch: |-
+        - op: remove
+          path: /spec/values/volumes/0
+    # Remove certificates directory environment variable
+    - target:
+        group: helm.toolkit.fluxcd.io
+        kind: HelmRelease
+        name: traefik
+      patch: |-
+        - op: remove
+          path: /spec/values/env/0
     # Remove dingo-srt port
     - target:
         group: helm.toolkit.fluxcd.io

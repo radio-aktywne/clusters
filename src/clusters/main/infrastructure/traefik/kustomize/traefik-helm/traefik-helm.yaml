@@ -11,5 +11,7 @@ spec:
     - name: traefik-namespace
     # Deploy MetalLB first
     - name: metallb
+    # Deploy trust-manager first
+    - name: trust-manager
   # This key always needs to be here for patching to work
   patches: []
