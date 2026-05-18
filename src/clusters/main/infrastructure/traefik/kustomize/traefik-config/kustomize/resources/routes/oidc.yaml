@@ -1,0 +1,22 @@
+# Create HTTP ingress route for OIDC middleware
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: oidc
+spec:
+  entryPoints:
+    # Use entrypoint for HTTPS traffic
+    - https
+  routes:
+    # Match only some specific paths handled by the middleware
+    - match: PathRegexp(`^/auth/(logout/(backchannel|frontchannel))/?$`)
+      kind: Rule
+      # Set low priority to not interfere with other routes
+      priority: -1
+      middlewares:
+        # Use OIDC middleware
+        - name: oidc
+      services:
+        # The middleware will handle the request, but some service is required
+        - kind: TraefikService
+          name: noop@internal

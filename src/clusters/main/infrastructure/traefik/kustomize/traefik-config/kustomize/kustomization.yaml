@@ -1,7 +1,30 @@
 # Create traefik-config Kustomization
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+# Include the following configuration files
+configurations:
+  - configurations/vars.yaml
 # Include the following resources
 resources:
+  - resources/middleware/oidc.yaml
+  - resources/routes/oidc.yaml
   - resources/certificate.yaml
   - resources/store.yaml
+# Generate secrets
+secretGenerator:
+  - files:
+      - client-secret=secrets/oidc/client-secret
+      - dragonfly-password=secrets/oidc/dragonfly-password
+      - session-encryption-key=secrets/oidc/session-encryption-key
+    name: traefik-config-secrets-oidc
+# Define variables
+# Variables are deprecated, but new replacements don't work as expected
+# https://github.com/kubernetes-sigs/kustomize/issues/4475
+vars:
+  - name: TRAEFIK_CONFIG_SECRETS_OIDC
+    objref:
+      apiVersion: v1
+      kind: Secret
+      name: traefik-config-secrets-oidc
+    fieldref:
+      fieldPath: metadata.name

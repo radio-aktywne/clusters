@@ -1,0 +1,49 @@
+# Create OIDC middleware
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: oidc
+spec:
+  plugin:
+    traefikoidc:
+      allowOpaqueTokens: true
+      backchannelLogoutURL: /auth/logout/backchannel
+      callbackURL: /auth/callback
+      clientAuthMethod: client_secret_basic
+      clientID: traefik
+      clientSecret: urn:k8s:secret:$(TRAEFIK_CONFIG_SECRETS_OIDC):client-secret
+      cookieDomain: radioaktywne.pl
+      cookiePrefix: __Http-traefik-oidc-
+      enableBackchannelLogout: true
+      enableFrontchannelLogout: true
+      enablePKCE: true
+      frontchannelLogoutURL: /auth/logout/frontchannel
+      headers:
+        - name: X-User-ID
+          value: "{{ `{{ .Claims.sub }}` }}"
+        - name: X-User-Traits
+          value: "{{ `{{ .Claims.traits }}` }}"
+      logLevel: debug
+      logoutURL: /auth/logout
+      maxRefreshTokenAgeSeconds: 2592000
+      minimalHeaders: true
+      overrideScopes: true
+      postLogoutRedirectURI: ""
+      providerURL: https://scorpion.k8s.radioaktywne.pl
+      redis:
+        address: dragonfly.traefik.svc.cluster.local:6379
+        enabled: true
+        enableCircuitBreaker: true
+        enableHealthCheck: true
+        keyPrefix: "traefik:oidc:"
+        password: urn:k8s:secret:$(TRAEFIK_CONFIG_SECRETS_OIDC):dragonfly-password
+      refreshGracePeriodSeconds: 600
+      requireTokenIntrospection: false
+      scopes:
+        - openid
+        - profile
+        - offline_access
+      sessionEncryptionKey: urn:k8s:secret:$(TRAEFIK_CONFIG_SECRETS_OIDC):session-encryption-key
+      sessionMaxAge: 2592000
+      strictAudienceValidation: true
+      stripAuthCookies: true

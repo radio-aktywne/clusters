@@ -1,0 +1,20 @@
+# Create OIDC middleware
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: oidc
+spec:
+  plugin:
+    traefikoidc:
+      backchannelLogoutURL: /auth/logout/backchannel
+      callbackURL: /auth/callback
+      clientID: traefik
+      clientSecret: secret
+      enableBackchannelLogout: true
+      enableFrontchannelLogout: true
+      frontchannelLogoutURL: /auth/logout/frontchannel
+      providerURL: https://example.com
+      redis:
+        address: dragonfly.traefik.svc.cluster.local:6379
+        enabled: true
+      sessionEncryptionKey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

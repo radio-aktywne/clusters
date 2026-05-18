@@ -18,16 +18,52 @@ spec:
   postRenderers: []
   values:
     scorpion:
-      urls:
-        issuer: https://scorpion.k8s.radioaktywne.pl
-        public: https://scorpion.k8s.radioaktywne.pl
-        admin: https://admin.scorpion.k8s.radioaktywne.pl
+      clients:
+        traefik:
+          client_id: traefik
+          backchannel_logout_session_required: true
+          backchannel_logout_uri: https://k8s.radioaktywne.pl/auth/logout/backchannel
+          frontchannel_logout_session_required: true
+          frontchannel_logout_uri: https://k8s.radioaktywne.pl/auth/logout/frontchannel
+          grant_types:
+            - authorization_code
+            - refresh_token
+          post_logout_redirect_uris:
+            - https://aster.k8s.radioaktywne.pl
+            - https://daisy.k8s.radioaktywne.pl
+            - https://jasmine.k8s.radioaktywne.pl
+            - https://lotus.k8s.radioaktywne.pl
+            - https://magnolia.k8s.radioaktywne.pl
+            - https://poppy.k8s.radioaktywne.pl
+            - https://tulip.k8s.radioaktywne.pl
+          redirect_uris:
+            - https://aster.k8s.radioaktywne.pl/auth/callback
+            - https://daisy.k8s.radioaktywne.pl/auth/callback
+            - https://jasmine.k8s.radioaktywne.pl/auth/callback
+            - https://lotus.k8s.radioaktywne.pl/auth/callback
+            - https://magnolia.k8s.radioaktywne.pl/auth/callback
+            - https://poppy.k8s.radioaktywne.pl/auth/callback
+            - https://tulip.k8s.radioaktywne.pl/auth/callback
+          response_types:
+            - code
+          scope: openid profile offline_access
+          token_endpoint_auth_method: client_secret_basic
       crocus:
         public:
           scheme: https
           host: crocus.k8s.radioaktywne.pl
           port: null
       debug: false
+      janitor:
+        retention: 720h
+      lifetimes:
+        tokens:
+          access: 1h
+          refresh: 720h
+      urls:
+        issuer: https://scorpion.k8s.radioaktywne.pl
+        public: https://scorpion.k8s.radioaktywne.pl
+        admin: https://admin.scorpion.k8s.radioaktywne.pl
   valuesFrom:
     - kind: Secret
       name: scorpion-helm-secrets-values

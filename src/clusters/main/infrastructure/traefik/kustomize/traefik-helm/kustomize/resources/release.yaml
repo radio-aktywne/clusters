@@ -17,6 +17,14 @@ spec:
   # This key always needs to be here for patching to work
   postRenderers: []
   values:
+    # Experimental features
+    experimental:
+      # Plugins
+      plugins:
+        # OIDC plugin
+        traefikoidc:
+          moduleName: github.com/lukaszraczylo/traefikoidc
+          version: v1.0.10
     # Use Traefik v3.6
     image:
       tag: "v3.6"
@@ -158,6 +166,10 @@ spec:
         protocol: TCP
         # Port to use inside the cluster
         port: 9993
+    providers:
+      kubernetesCRD:
+        # Allow cross-namespace references in resources
+        allowCrossNamespace: true
     service:
       annotations:
         # Use static IP address for the service

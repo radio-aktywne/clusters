@@ -6,3 +6,4 @@ resources:
   - traefik-config/traefik-config.yaml
   - traefik-helm/traefik-helm.yaml
   - traefik-namespace/traefik-namespace.yaml
+  - traefik-state/traefik-state.yaml
