@@ -1,0 +1,19 @@
+# Create dragonfly Helm release
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: dragonfly
+spec:
+  chart:
+    spec:
+      # Use this chart from the repository
+      chart: dragonfly
+      # Exact version must be used due to dragonfly using "v" prefix
+      # https://github.com/dragonflydb/dragonfly-operator/issues/494
+      version: "v1.38.0"
+      # Use this Helm repository
+      sourceRef:
+        kind: HelmRepository
+        name: dragonfly
+  # This key always needs to be here for patching to work
+  postRenderers: []

@@ -1,0 +1,8 @@
+# Create dragonfly Helm repository
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: dragonfly
+spec:
+  type: oci
+  url: oci://ghcr.io/dragonflydb/dragonfly/helm

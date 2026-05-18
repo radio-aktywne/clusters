@@ -5,13 +5,11 @@ metadata:
   name: traefik-config
 spec:
   # Path inside repository to a directory containing Kustomization files
-  path: src/clusters/main/infrastructure/traefik/kustomize/traefik-config/kustomize
+  path: tests/clusters/ci/main/infrastructure/traefik/kustomize/traefik-config/kustomize
   dependsOn:
     # Deploy Helm release first
     - name: traefik-helm
     # Deploy state first
     - name: traefik-state
-    # Deploy cert-manager first
-    - name: cert-manager
   # This key always needs to be here for patching to work
   patches: []
