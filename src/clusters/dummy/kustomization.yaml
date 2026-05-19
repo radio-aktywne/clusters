@@ -129,8 +129,11 @@ patches:
                       mode: enabled
                     interval: 5m
                     install:
+                      crds: CreateReplace
                       remediation:
                         retries: 3
                     upgrade:
+                      cleanupOnFail: true
+                      crds: CreateReplace
                       remediation:
                         retries: 3

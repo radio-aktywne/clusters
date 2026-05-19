@@ -1,0 +1,15 @@
+# Create crocus-traefik Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: crocus-traefik
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: tests/clusters/main/apps/crocus/kustomize/crocus-traefik/kustomize
+  dependsOn:
+    # Deploy Helm release first
+    - name: crocus-helm
+    # Deploy Traefik first
+    - name: traefik
+  # This key always needs to be here for patching to work
+  patches: []

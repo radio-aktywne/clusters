@@ -1,5 +1,0 @@
-# Overlay metallb-namespace Kustomization
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-resources:
-  - ../../../../../../../../../src/clusters/main/infrastructure/metallb/kustomize/metallb-namespace/kustomize

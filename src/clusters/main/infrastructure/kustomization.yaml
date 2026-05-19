@@ -4,6 +4,7 @@ kind: Kustomization
 # Include the following resources
 resources:
   - cert-manager/cert-manager.yaml
+  - flux/flux.yaml
   - longhorn/longhorn.yaml
   - metallb/metallb.yaml
   - metrics/metrics.yaml

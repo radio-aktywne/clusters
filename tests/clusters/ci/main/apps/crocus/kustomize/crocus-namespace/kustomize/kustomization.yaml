@@ -1,5 +1,0 @@
-# Overlay crocus-namespace Kustomization
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-resources:
-  - ../../../../../../../../../src/clusters/main/apps/crocus/kustomize/crocus-namespace/kustomize
