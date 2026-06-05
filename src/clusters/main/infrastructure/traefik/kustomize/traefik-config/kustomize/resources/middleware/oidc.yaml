@@ -20,9 +20,9 @@ spec:
       frontchannelLogoutURL: /auth/logout/frontchannel
       headers:
         - name: X-User-ID
-          value: "{{ `{{ .Claims.sub }}` }}"
+          value: "{{ .Claims.sub }}"
         - name: X-User-Traits
-          value: "{{ `{{ .Claims.traits }}` }}"
+          value: "{{ .Claims.traits }}"
       logLevel: debug
       logoutURL: /auth/logout
       maxRefreshTokenAgeSeconds: 2592000
