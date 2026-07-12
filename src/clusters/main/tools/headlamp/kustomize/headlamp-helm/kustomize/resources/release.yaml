@@ -16,3 +16,8 @@ spec:
         name: headlamp
   # This key always needs to be here for patching to work
   postRenderers: []
+  values:
+    config:
+      # Use service account for authentication with Kubernetes API
+      # This means no authentication is required to access headlamp
+      unsafeUseServiceAccountToken: true
