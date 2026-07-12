@@ -11,6 +11,10 @@ spec:
     # Match traffic with the Host header
     - match: HostRegexp(`flux\..*`)
       kind: Rule
+      middlewares:
+        # Use OIDC middleware
+        - name: oidc
+          namespace: traefik
       services:
         # Route traffic to the flux-operator service
         - name: flux-operator

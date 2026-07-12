@@ -11,6 +11,10 @@ spec:
     # Match traffic with the Host header
     - match: HostRegexp(`headlamp\..*`)
       kind: Rule
+      middlewares:
+        # Use OIDC middleware
+        - name: oidc
+          namespace: traefik
       services:
         # Route traffic to the headlamp service
         - name: headlamp
