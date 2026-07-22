@@ -6,6 +6,9 @@ metadata:
 spec:
   plugin:
     traefikoidc:
+      allowedClaims:
+        - sub
+        - traits
       allowOpaqueTokens: true
       backchannelLogoutURL: /auth/logout/backchannel
       callbackURL: /auth/callback
@@ -18,17 +21,23 @@ spec:
       enableFrontchannelLogout: true
       enablePKCE: true
       frontchannelLogoutURL: /auth/logout/frontchannel
+      # yamllint disable rule:line-length
       headers:
         - name: X-User-ID
-          value: "{{ .Claims.sub }}"
-        - name: X-User-Traits
-          value: "{{ .Claims.traits }}"
+          value: '{{ .Claims.sub | default "" }}'
+        - name: X-User-Traits-Locales-Preferred
+          value: '{{ ((.Claims.traits).locales).preferred | default "" }}'
+        - name: X-User-Traits-Names-Display
+          value: '{{ ((.Claims.traits).names).display | default "" }}'
+        - name: X-User-Traits-Pictures-Profile-URL
+          value: '{{ (((.Claims.traits).pictures).profile).url | default "" }}'
+      # yamllint enable rule:line-length
       logLevel: debug
       logoutURL: /auth/logout
       maxRefreshTokenAgeSeconds: 2592000
       minimalHeaders: true
       overrideScopes: true
-      postLogoutRedirectURI: ""
+      postLogoutRedirectURI: /
       providerURL: https://scorpion.k8s.radioaktywne.pl
       redis:
         address: dragonfly.traefik.svc.cluster.local:6379
@@ -47,3 +56,4 @@ spec:
       sessionMaxAge: 2592000
       strictAudienceValidation: true
       stripAuthCookies: true
+      userIdentifierClaim: sub

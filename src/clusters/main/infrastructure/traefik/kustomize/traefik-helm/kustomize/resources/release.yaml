@@ -28,7 +28,7 @@ spec:
         # OIDC plugin
         traefikoidc:
           moduleName: github.com/lukaszraczylo/traefikoidc
-          version: v1.0.10
+          version: v1.0.29
     # Use Traefik v3.6
     image:
       tag: "v3.6"
