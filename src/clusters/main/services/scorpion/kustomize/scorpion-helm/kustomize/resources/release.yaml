@@ -29,16 +29,16 @@ spec:
             - authorization_code
             - refresh_token
           post_logout_redirect_uris:
-            - https://flux.k8s.radioaktywne.pl
-            - https://headlamp.k8s.radioaktywne.pl
-            - https://longhorn.k8s.radioaktywne.pl
-            - https://aster.k8s.radioaktywne.pl
-            - https://daisy.k8s.radioaktywne.pl
-            - https://jasmine.k8s.radioaktywne.pl
-            - https://lotus.k8s.radioaktywne.pl
-            - https://magnolia.k8s.radioaktywne.pl
-            - https://poppy.k8s.radioaktywne.pl
-            - https://tulip.k8s.radioaktywne.pl
+            - https://flux.k8s.radioaktywne.pl/
+            - https://headlamp.k8s.radioaktywne.pl/
+            - https://longhorn.k8s.radioaktywne.pl/
+            - https://aster.k8s.radioaktywne.pl/
+            - https://daisy.k8s.radioaktywne.pl/
+            - https://jasmine.k8s.radioaktywne.pl/
+            - https://lotus.k8s.radioaktywne.pl/
+            - https://magnolia.k8s.radioaktywne.pl/
+            - https://poppy.k8s.radioaktywne.pl/
+            - https://tulip.k8s.radioaktywne.pl/
           redirect_uris:
             - https://flux.k8s.radioaktywne.pl/auth/callback
             - https://headlamp.k8s.radioaktywne.pl/auth/callback
