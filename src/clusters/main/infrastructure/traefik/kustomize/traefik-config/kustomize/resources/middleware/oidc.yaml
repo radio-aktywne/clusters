@@ -32,6 +32,7 @@ spec:
         - name: X-User-Traits-Pictures-Profile-URL
           value: '{{ (((.Claims.traits).pictures).profile).url | default "" }}'
       # yamllint enable rule:line-length
+      introspectionURL: https://admin.scorpion.k8s.radioaktywne.pl/oauth2/introspect
       logLevel: debug
       logoutURL: /auth/logout
       maxRefreshTokenAgeSeconds: 2592000
@@ -47,7 +48,7 @@ spec:
         keyPrefix: "traefik:oidc:"
         password: urn:k8s:secret:$(TRAEFIK_CONFIG_SECRETS_OIDC):dragonfly-password
       refreshGracePeriodSeconds: 600
-      requireTokenIntrospection: false
+      requireTokenIntrospection: true
       scopes:
         - openid
         - profile
