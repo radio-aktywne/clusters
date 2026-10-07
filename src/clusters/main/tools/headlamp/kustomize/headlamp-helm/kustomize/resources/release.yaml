@@ -8,8 +8,8 @@ spec:
     spec:
       # Use this chart from the repository
       chart: headlamp
-      # Pin version to major
-      version: "0.x"
+      # Pin version to minor
+      version: "0.45.x"
       # Use this Helm repository
       sourceRef:
         kind: HelmRepository

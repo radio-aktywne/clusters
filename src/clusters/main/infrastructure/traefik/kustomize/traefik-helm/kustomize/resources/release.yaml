@@ -9,7 +9,7 @@ spec:
       # Use this chart from the repository
       chart: traefik
       # Pin version to major
-      version: "37.x"
+      version: "41.x"
       # Use this Helm repository
       sourceRef:
         kind: HelmRepository
@@ -17,6 +17,10 @@ spec:
   # This key always needs to be here for patching to work
   postRenderers: []
   values:
+    # Logging
+    accessLog:
+      # Enable access logs
+      enabled: true
     env:
       # Add extra certificates to trust
       - name: SSL_CERT_DIR
@@ -28,18 +32,10 @@ spec:
         # OIDC plugin
         traefikoidc:
           moduleName: github.com/lukaszraczylo/traefikoidc
-          version: v1.0.32
-    # Use Traefik v3.6
-    image:
-      tag: "v3.6"
-    # Logging
-    logs:
-      access:
-        # Enable access logs
-        enabled: true
-      general:
-        # Set log level to DEBUG
-        level: DEBUG
+          version: v1.0.42
+    log:
+      # Set log level to DEBUG
+      level: DEBUG
     # Disable Prometheus metrics
     metrics:
       prometheus: null
@@ -56,15 +52,16 @@ spec:
           default: true
         # Expose it on this port
         exposedPort: 80
-        # HTTP traffic uses TCP
-        protocol: TCP
+        http:
+          # Redirect to HTTPS
+          redirections:
+            entryPoint:
+              scheme: https
+              to: https
         # Port to use inside the cluster
         port: 8000
-        # Redirect to HTTPS
-        redirections:
-          entryPoint:
-            to: https
-            scheme: https
+        # HTTP traffic uses TCP
+        protocol: TCP
       # Port for HTTPS traffic
       https:
         # Expose it outside the cluster
@@ -72,13 +69,14 @@ spec:
           default: true
         # Expose it on this port
         exposedPort: 443
-        # Secure web traffic uses TCP
-        protocol: TCP
+        http:
+          # Enable TLS
+          tls:
+            enabled: true
         # Port to use inside the cluster
         port: 8443
-        # Enable TLS
-        tls:
-          enabled: true
+        # Secure web traffic uses TCP
+        protocol: TCP
       # Port for TLS over TCP traffic
       tls-tcp:
         # Expose it outside the cluster
@@ -86,13 +84,14 @@ spec:
           default: true
         # Expose it on this port
         exposedPort: 10000
-        # TCP traffic uses TCP
-        protocol: TCP
+        http:
+          # Enable TLS
+          tls:
+            enabled: true
         # Port to use inside the cluster
         port: 10000
-        # Enable TLS
-        tls:
-          enabled: true
+        # TCP traffic uses TCP
+        protocol: TCP
       # Port for dingo SRT traffic
       dingo-srt:
         # Expose it outside the cluster
@@ -178,8 +177,9 @@ spec:
       annotations:
         # Use static IP address for the service
         metallb.universe.tf/loadBalancerIPs: 10.21.37.126
-      # Use MetalLB LoadBalancer
-      loadBalancerClass: metallb
+      spec:
+        # Use MetalLB LoadBalancer
+        loadBalancerClass: metallb
     volumes:
       # Mount trust-manager certificates
       - mountPath: /certs/
