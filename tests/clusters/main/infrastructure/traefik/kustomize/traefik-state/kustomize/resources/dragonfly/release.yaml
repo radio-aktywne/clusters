@@ -10,7 +10,7 @@ spec:
       chart: dragonfly
       # Exact version must be used due to dragonfly using "v" prefix
       # https://github.com/dragonflydb/dragonfly-operator/issues/494
-      version: "v1.38.0"
+      version: "v2.0.0"
       # Use this Helm repository
       sourceRef:
         kind: HelmRepository
