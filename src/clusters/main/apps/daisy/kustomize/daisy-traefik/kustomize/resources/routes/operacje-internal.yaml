@@ -1,0 +1,22 @@
+# Create HTTP ingress route for daisy
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: operacje-internal
+spec:
+  entryPoints:
+    # Use entrypoint for internal HTTP traffic
+    - https-internal
+  routes:
+    # Match traffic with the Host header
+    - match: Host(`operacje.radioaktywne.pl`)
+      kind: Rule
+      middlewares:
+        # Use impersonation middleware
+        - name: impersonate
+          namespace: traefik
+      services:
+        # Route traffic to the daisy service
+        - name: daisy
+          # This is the name of the port in the service
+          port: http

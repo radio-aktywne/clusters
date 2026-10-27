@@ -1,0 +1,22 @@
+# Create HTTP ingress route for headlamp
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: headlamp
+spec:
+  entryPoints:
+    # Use entrypoint for internal HTTP traffic
+    - https-internal
+  routes:
+    # Match traffic with the Host header
+    - match: Host(`headlamp.k8s.radioaktywne.pl`)
+      kind: Rule
+      middlewares:
+        # Use OIDC middleware
+        - name: oidc
+          namespace: traefik
+      services:
+        # Route traffic to the headlamp service
+        - name: headlamp
+          # This is the name of the port in the service
+          port: http

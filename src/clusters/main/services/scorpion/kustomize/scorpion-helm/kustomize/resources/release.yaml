@@ -24,11 +24,18 @@ spec:
           backchannel_logout_session_required: true
           backchannel_logout_uri: https://k8s.radioaktywne.pl/auth/logout/backchannel
           frontchannel_logout_session_required: true
-          frontchannel_logout_uri: https://k8s.radioaktywne.pl/auth/logout/frontchannel
+          frontchannel_logout_uri: https://sesja.radioaktywne.pl/auth/logout/frontchannel
           grant_types:
             - authorization_code
             - refresh_token
           post_logout_redirect_uris:
+            - https://studio.radioaktywne.pl/
+            - https://operacje.radioaktywne.pl/
+            - https://audycje.radioaktywne.pl/
+            - https://playlisty.radioaktywne.pl/
+            - https://archiwum.radioaktywne.pl/
+            - https://nagrania.radioaktywne.pl/
+            - https://transmisja.radioaktywne.pl/
             - https://flux.k8s.radioaktywne.pl/
             - https://headlamp.k8s.radioaktywne.pl/
             - https://longhorn.k8s.radioaktywne.pl/
@@ -40,6 +47,14 @@ spec:
             - https://poppy.k8s.radioaktywne.pl/
             - https://tulip.k8s.radioaktywne.pl/
           redirect_uris:
+            - https://studio.radioaktywne.pl/auth/callback
+            - https://operacje.radioaktywne.pl/auth/callback
+            - https://audycje.radioaktywne.pl/auth/callback
+            - https://playlisty.radioaktywne.pl/auth/callback
+            - https://archiwum.radioaktywne.pl/auth/callback
+            - https://nagrania.radioaktywne.pl/auth/callback
+            - https://transmisja.radioaktywne.pl/auth/callback
+            - https://sesja.radioaktywne.pl/auth/callback
             - https://flux.k8s.radioaktywne.pl/auth/callback
             - https://headlamp.k8s.radioaktywne.pl/auth/callback
             - https://longhorn.k8s.radioaktywne.pl/auth/callback
@@ -57,7 +72,7 @@ spec:
       crocus:
         public:
           scheme: https
-          host: crocus.k8s.radioaktywne.pl
+          host: sso.radioaktywne.pl
           port: null
       debug: false
       janitor:
@@ -67,8 +82,8 @@ spec:
           access: 1h
           refresh: 720h
       urls:
-        issuer: https://scorpion.k8s.radioaktywne.pl
-        public: https://scorpion.k8s.radioaktywne.pl
+        issuer: https://oidc.radioaktywne.pl
+        public: https://oidc.radioaktywne.pl
         admin: https://admin.scorpion.k8s.radioaktywne.pl
   valuesFrom:
     - kind: Secret

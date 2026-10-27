@@ -39,7 +39,7 @@ spec:
       minimalHeaders: true
       overrideScopes: true
       postLogoutRedirectURI: /
-      providerURL: https://scorpion.k8s.radioaktywne.pl
+      providerURL: https://oidc.radioaktywne.pl
       redis:
         address: dragonfly.traefik.svc.cluster.local:6379
         enabled: true

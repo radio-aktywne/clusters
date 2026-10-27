@@ -21,7 +21,7 @@ spec:
       debug: false
       urls:
         orchid:
-          host: orchid.k8s.radioaktywne.pl
+          host: konto.radioaktywne.pl
           port: null
           scheme: https
   valuesFrom:

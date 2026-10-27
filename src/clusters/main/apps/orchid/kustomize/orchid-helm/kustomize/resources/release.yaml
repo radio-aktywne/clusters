@@ -24,11 +24,11 @@ spec:
           domain: radioaktywne.pl
       urls:
         crocus:
-          host: crocus.k8s.radioaktywne.pl
+          host: sso.radioaktywne.pl
           port: null
           scheme: https
         falcon:
-          host: falcon.k8s.radioaktywne.pl
+          host: id.radioaktywne.pl
           port: null
           scheme: https
   valuesFrom:

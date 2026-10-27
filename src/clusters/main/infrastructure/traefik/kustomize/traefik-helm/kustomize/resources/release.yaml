@@ -45,8 +45,15 @@ spec:
       web: null
       websecure: null
       metrics: null
-      # Port for HTTP traffic
-      http:
+      # Internal management port
+      traefik:
+        expose:
+          # Don't expose through the LoadBalancer
+          default: false
+        # Port to use inside the cluster
+        port: 9000
+      # Port for internal HTTP traffic
+      http-internal:
         # Expose it outside the cluster
         expose:
           default: true
@@ -57,13 +64,13 @@ spec:
           redirections:
             entryPoint:
               scheme: https
-              to: https
+              to: https-internal
         # Port to use inside the cluster
-        port: 8000
+        port: 80
         # HTTP traffic uses TCP
         protocol: TCP
-      # Port for HTTPS traffic
-      https:
+      # Port for internal HTTPS traffic
+      https-internal:
         # Expose it outside the cluster
         expose:
           default: true
@@ -74,8 +81,22 @@ spec:
           tls:
             enabled: true
         # Port to use inside the cluster
-        port: 8443
+        port: 443
         # Secure web traffic uses TCP
+        protocol: TCP
+      # Port for external HTTP traffic
+      http-external:
+        # Expose it outside the cluster
+        expose:
+          default: true
+        # Expose it on this port
+        exposedPort: 8080
+        forwardedHeaders:
+          # Trust forwarded headers
+          insecure: true
+        # Port to use inside the cluster
+        port: 8080
+        # HTTP traffic uses TCP
         protocol: TCP
       # Port for TLS over TCP traffic
       tls-tcp:
@@ -173,6 +194,11 @@ spec:
       kubernetesCRD:
         # Allow cross-namespace references in resources
         allowCrossNamespace: true
+    securityContext:
+      capabilities:
+        add:
+          # Allow binding privileged ports with the chart's non-root defaults
+          - NET_BIND_SERVICE
     service:
       annotations:
         # Use static IP address for the service

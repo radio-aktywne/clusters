@@ -19,14 +19,14 @@ spec:
   values:
     falcon:
       urls:
-        public: https://falcon.k8s.radioaktywne.pl
+        public: https://id.radioaktywne.pl
         admin: https://admin.falcon.k8s.radioaktywne.pl
       cookies:
         domain: radioaktywne.pl
       orchid:
         public:
           scheme: https
-          host: orchid.k8s.radioaktywne.pl
+          host: konto.radioaktywne.pl
           port: null
       oidc:
         google:

@@ -1,0 +1,26 @@
+# Create frontchannel logout ingress route for OIDC middleware
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: logout-frontchannel
+spec:
+  entryPoints:
+    # Use entrypoint for internal HTTP traffic
+    - https-internal
+    # Use entrypoint for external HTTP traffic
+    - http-external
+  routes:
+    # Match the frontchannel logout path handled by the middleware
+    - match: >-
+        Host(`sesja.radioaktywne.pl`) &&
+        Path(`/auth/logout/frontchannel`)
+      kind: Rule
+      # Set low priority to not interfere with other routes
+      priority: -1
+      middlewares:
+        # Use OIDC middleware
+        - name: oidc
+      services:
+        # The middleware will handle the request, but some service is required
+        - kind: TraefikService
+          name: noop@internal
