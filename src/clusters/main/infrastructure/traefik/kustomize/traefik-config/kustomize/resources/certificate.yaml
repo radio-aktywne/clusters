@@ -6,6 +6,7 @@ metadata:
 spec:
   # Include the following DNS names in the Subject Alt Name field
   dnsNames:
+    - "*.radioaktywne.pl"
     - "k8s.radioaktywne.pl"
     - "*.k8s.radioaktywne.pl"
     - "*.flux.k8s.radioaktywne.pl"

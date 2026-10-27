@@ -1,0 +1,18 @@
+# Create HTTP ingress route for octopus
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: octopus
+spec:
+  entryPoints:
+    # Use entrypoint for internal HTTP traffic
+    - https-internal
+  routes:
+    # Match traffic with the Host header
+    - match: Host(`octopus.k8s.radioaktywne.pl`)
+      kind: Rule
+      services:
+        # Route traffic to the octopus service
+        - name: octopus
+          # This is the name of the port in the service
+          port: http

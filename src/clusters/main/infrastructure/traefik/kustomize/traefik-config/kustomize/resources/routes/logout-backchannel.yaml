@@ -1,0 +1,24 @@
+# Create backchannel logout ingress route for OIDC middleware
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: logout-backchannel
+spec:
+  entryPoints:
+    # Use entrypoint for internal HTTP traffic
+    - https-internal
+  routes:
+    # Match the backchannel logout path handled by the middleware
+    - match: >-
+        Host(`k8s.radioaktywne.pl`) &&
+        Path(`/auth/logout/backchannel`)
+      kind: Rule
+      # Set low priority to not interfere with other routes
+      priority: -1
+      middlewares:
+        # Use OIDC middleware
+        - name: oidc
+      services:
+        # The middleware will handle the request, but some service is required
+        - kind: TraefikService
+          name: noop@internal

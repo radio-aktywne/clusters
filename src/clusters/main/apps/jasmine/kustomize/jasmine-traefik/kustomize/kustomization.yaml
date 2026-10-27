@@ -3,4 +3,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 # Include the following resources
 resources:
-  - resources/routes/http.yaml
+  - resources/routes/jasmine.yaml
+  - resources/routes/nagrania-internal.yaml
+  - resources/routes/nagrania-external.yaml

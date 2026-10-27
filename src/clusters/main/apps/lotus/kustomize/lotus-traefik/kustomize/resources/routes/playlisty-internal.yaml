@@ -1,0 +1,22 @@
+# Create HTTP ingress route for lotus
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: playlisty-internal
+spec:
+  entryPoints:
+    # Use entrypoint for internal HTTP traffic
+    - https-internal
+  routes:
+    # Match traffic with the Host header
+    - match: Host(`playlisty.radioaktywne.pl`)
+      kind: Rule
+      middlewares:
+        # Use impersonation middleware
+        - name: impersonate
+          namespace: traefik
+      services:
+        # Route traffic to the lotus service
+        - name: lotus
+          # This is the name of the port in the service
+          port: http

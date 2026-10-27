@@ -1,0 +1,22 @@
+# Create HTTP ingress route for jasmine
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: nagrania-external
+spec:
+  entryPoints:
+    # Use entrypoint for external HTTP traffic
+    - http-external
+  routes:
+    # Match traffic with the Host header
+    - match: Host(`nagrania.radioaktywne.pl`)
+      kind: Rule
+      middlewares:
+        # Use OIDC middleware
+        - name: oidc
+          namespace: traefik
+      services:
+        # Route traffic to the jasmine service
+        - name: jasmine
+          # This is the name of the port in the service
+          port: http
