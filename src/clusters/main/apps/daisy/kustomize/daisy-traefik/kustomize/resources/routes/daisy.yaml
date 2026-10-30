@@ -8,12 +8,28 @@ spec:
     # Use entrypoint for internal HTTP traffic
     - https-internal
   routes:
-    # Match traffic with the Host header
-    - match: Host(`daisy.k8s.radioaktywne.pl`)
+    # Enable OIDC when requested by the header
+    - match: >-
+        Host(`daisy.k8s.radioaktywne.pl`) &&
+        Header(`X-Traefik-Middleware-OIDC`, `true`)
       kind: Rule
+      priority: 20
       middlewares:
         # Use OIDC middleware
         - name: oidc
+          namespace: traefik
+      services:
+        # Route traffic to the daisy service
+        - name: daisy
+          # This is the name of the port in the service
+          port: http
+    # Use impersonation by default
+    - match: Host(`daisy.k8s.radioaktywne.pl`)
+      kind: Rule
+      priority: 10
+      middlewares:
+        # Use impersonation middleware
+        - name: impersonate
           namespace: traefik
       services:
         # Route traffic to the daisy service
