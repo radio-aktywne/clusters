@@ -31,15 +31,15 @@ spec:
           post_logout_redirect_uris:
             - https://sso.radioaktywne.pl/logout/callback
           redirect_uris:
-            - https://studio.radioaktywne.pl/auth/callback
-            - https://operacje.radioaktywne.pl/auth/callback
-            - https://audycje.radioaktywne.pl/auth/callback
-            - https://playlisty.radioaktywne.pl/auth/callback
             - https://archiwum.radioaktywne.pl/auth/callback
+            - https://audycje.radioaktywne.pl/auth/callback
             - https://nagrania.radioaktywne.pl/auth/callback
-            - https://transmisja.radioaktywne.pl/auth/callback
-            - https://start.radioaktywne.pl/auth/callback
+            - https://operacje.radioaktywne.pl/auth/callback
+            - https://playlisty.radioaktywne.pl/auth/callback
             - https://sesja.radioaktywne.pl/auth/callback
+            - https://start.radioaktywne.pl/auth/callback
+            - https://studio.radioaktywne.pl/auth/callback
+            - https://transmisja.radioaktywne.pl/auth/callback
             - https://flux.k8s.radioaktywne.pl/auth/callback
             - https://headlamp.k8s.radioaktywne.pl/auth/callback
             - https://longhorn.k8s.radioaktywne.pl/auth/callback

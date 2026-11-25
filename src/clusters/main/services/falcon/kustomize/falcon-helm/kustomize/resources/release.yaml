@@ -30,14 +30,14 @@ spec:
           port: null
       redirects:
         allowed:
-          - https://studio.radioaktywne.pl
-          - https://operacje.radioaktywne.pl
-          - https://audycje.radioaktywne.pl
-          - https://playlisty.radioaktywne.pl
           - https://archiwum.radioaktywne.pl
+          - https://audycje.radioaktywne.pl
           - https://nagrania.radioaktywne.pl
-          - https://transmisja.radioaktywne.pl
+          - https://operacje.radioaktywne.pl
+          - https://playlisty.radioaktywne.pl
           - https://start.radioaktywne.pl
+          - https://studio.radioaktywne.pl
+          - https://transmisja.radioaktywne.pl
           - https://aster.k8s.radioaktywne.pl
           - https://daisy.k8s.radioaktywne.pl
           - https://jasmine.k8s.radioaktywne.pl
