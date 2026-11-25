@@ -19,25 +19,25 @@ spec:
   values:
     sunflower:
       apps:
-        - emoji: "🎤"
+        - emoji: 🎤
           name: Studio
           url: https://studio.radioaktywne.pl
-        - emoji: "🎭"
+        - emoji: 🎭
           name: Audycje
           url: https://audycje.radioaktywne.pl
-        - emoji: "💽"
+        - emoji: 💽
           name: Playlisty
           url: https://playlisty.radioaktywne.pl
-        - emoji: "📼"
+        - emoji: 📼
           name: Archiwum
           url: https://archiwum.radioaktywne.pl
-        - emoji: "🛋️"
+        - emoji: 🛋️
           name: Nagrania
           url: https://nagrania.radioaktywne.pl
-        - emoji: "🧼"
+        - emoji: 🧼
           name: Transmisja
           url: https://transmisja.radioaktywne.pl
-        - emoji: "📅"
+        - emoji: 📅
           name: Operacje
           url: https://operacje.radioaktywne.pl
       debug: false
