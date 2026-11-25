@@ -33,5 +33,8 @@ spec:
   # This key always needs to be here for patching to work
   postRenderers: []
   values:
+    frrk8s:
+      # Disable BGP backend, only L2 mode is used
+      enabled: false
     # Set the class for the LoadBalancer
     loadBalancerClass: metallb
