@@ -24,6 +24,10 @@ spec:
           host: konto.radioaktywne.pl
           port: null
           scheme: https
+        scorpion:
+          host: oidc.radioaktywne.pl
+          port: null
+          scheme: https
   valuesFrom:
     - kind: Secret
       name: crocus-helm-secrets-values

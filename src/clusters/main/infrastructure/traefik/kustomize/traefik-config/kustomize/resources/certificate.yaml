@@ -40,6 +40,7 @@ spec:
     - "*.orchid.k8s.radioaktywne.pl"
     - "*.podinfo.k8s.radioaktywne.pl"
     - "*.poppy.k8s.radioaktywne.pl"
+    - "*.sunflower.k8s.radioaktywne.pl"
     - "*.tulip.k8s.radioaktywne.pl"
   # Use Certificate Authority to issue the certificate
   issuerRef:

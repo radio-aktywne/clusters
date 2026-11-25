@@ -29,23 +29,7 @@ spec:
             - authorization_code
             - refresh_token
           post_logout_redirect_uris:
-            - https://studio.radioaktywne.pl/
-            - https://operacje.radioaktywne.pl/
-            - https://audycje.radioaktywne.pl/
-            - https://playlisty.radioaktywne.pl/
-            - https://archiwum.radioaktywne.pl/
-            - https://nagrania.radioaktywne.pl/
-            - https://transmisja.radioaktywne.pl/
-            - https://flux.k8s.radioaktywne.pl/
-            - https://headlamp.k8s.radioaktywne.pl/
-            - https://longhorn.k8s.radioaktywne.pl/
-            - https://aster.k8s.radioaktywne.pl/
-            - https://daisy.k8s.radioaktywne.pl/
-            - https://jasmine.k8s.radioaktywne.pl/
-            - https://lotus.k8s.radioaktywne.pl/
-            - https://magnolia.k8s.radioaktywne.pl/
-            - https://poppy.k8s.radioaktywne.pl/
-            - https://tulip.k8s.radioaktywne.pl/
+            - https://sso.radioaktywne.pl/logout/callback
           redirect_uris:
             - https://studio.radioaktywne.pl/auth/callback
             - https://operacje.radioaktywne.pl/auth/callback
@@ -54,6 +38,7 @@ spec:
             - https://archiwum.radioaktywne.pl/auth/callback
             - https://nagrania.radioaktywne.pl/auth/callback
             - https://transmisja.radioaktywne.pl/auth/callback
+            - https://start.radioaktywne.pl/auth/callback
             - https://sesja.radioaktywne.pl/auth/callback
             - https://flux.k8s.radioaktywne.pl/auth/callback
             - https://headlamp.k8s.radioaktywne.pl/auth/callback
@@ -64,6 +49,7 @@ spec:
             - https://lotus.k8s.radioaktywne.pl/auth/callback
             - https://magnolia.k8s.radioaktywne.pl/auth/callback
             - https://poppy.k8s.radioaktywne.pl/auth/callback
+            - https://sunflower.k8s.radioaktywne.pl/auth/callback
             - https://tulip.k8s.radioaktywne.pl/auth/callback
           response_types:
             - code

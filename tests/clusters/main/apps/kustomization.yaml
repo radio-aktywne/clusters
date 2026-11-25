@@ -16,6 +16,7 @@ resources:
   # - orchid/orchid.yaml
   - podinfo/podinfo.yaml
   # - poppy/poppy.yaml
+  # - sunflower/sunflower.yaml
   # - tulip/tulip.yaml
 # Apply patches for common configurations
 patches:
