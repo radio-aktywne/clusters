@@ -28,6 +28,24 @@ spec:
           scheme: https
           host: konto.radioaktywne.pl
           port: null
+      redirects:
+        allowed:
+          - https://archiwum.radioaktywne.pl
+          - https://audycje.radioaktywne.pl
+          - https://nagrania.radioaktywne.pl
+          - https://operacje.radioaktywne.pl
+          - https://playlisty.radioaktywne.pl
+          - https://start.radioaktywne.pl
+          - https://studio.radioaktywne.pl
+          - https://transmisja.radioaktywne.pl
+          - https://aster.k8s.radioaktywne.pl
+          - https://daisy.k8s.radioaktywne.pl
+          - https://jasmine.k8s.radioaktywne.pl
+          - https://lotus.k8s.radioaktywne.pl
+          - https://magnolia.k8s.radioaktywne.pl
+          - https://poppy.k8s.radioaktywne.pl
+          - https://sunflower.k8s.radioaktywne.pl
+          - https://tulip.k8s.radioaktywne.pl
       oidc:
         google:
           domain: radioaktywne.pl

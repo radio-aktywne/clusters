@@ -1,0 +1,48 @@
+# Create sunflower Helm release
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: sunflower
+spec:
+  chart:
+    spec:
+      # Use this chart from the repository
+      chart: sunflower
+      # Pin version to major
+      version: "0.x"
+      # Use this Helm repository
+      sourceRef:
+        kind: HelmRepository
+        name: radio-aktywne
+  # This key always needs to be here for patching to work
+  postRenderers: []
+  values:
+    sunflower:
+      apps:
+        - emoji: 🎤
+          name: Studio
+          url: https://studio.radioaktywne.pl
+        - emoji: 🎭
+          name: Audycje
+          url: https://audycje.radioaktywne.pl
+        - emoji: 💽
+          name: Playlisty
+          url: https://playlisty.radioaktywne.pl
+        - emoji: 📼
+          name: Archiwum
+          url: https://archiwum.radioaktywne.pl
+        - emoji: 🛋️
+          name: Nagrania
+          url: https://nagrania.radioaktywne.pl
+        - emoji: 🧼
+          name: Transmisja
+          url: https://transmisja.radioaktywne.pl
+        - emoji: 📅
+          name: Operacje
+          url: https://operacje.radioaktywne.pl
+      debug: false
+      urls:
+        orchid:
+          host: konto.radioaktywne.pl
+          port: null
+          scheme: https

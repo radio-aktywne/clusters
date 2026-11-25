@@ -1,0 +1,36 @@
+# Create HTTP ingress route for sunflower
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: sunflower
+spec:
+  entryPoints:
+    # Use entrypoint for internal HTTP traffic
+    - https-internal
+  routes:
+    # Enable OIDC when requested by the header
+    - match: >-
+        Host(`sunflower.k8s.radioaktywne.pl`) &&
+        Header(`X-Traefik-Middleware-OIDC`, `true`)
+      kind: Rule
+      middlewares:
+        # Use OIDC middleware
+        - name: oidc
+          namespace: traefik
+      services:
+        # Route traffic to the sunflower service
+        - name: sunflower
+          # This is the name of the port in the service
+          port: http
+    # Use impersonation by default
+    - match: Host(`sunflower.k8s.radioaktywne.pl`)
+      kind: Rule
+      middlewares:
+        # Use impersonation middleware
+        - name: impersonate
+          namespace: traefik
+      services:
+        # Route traffic to the sunflower service
+        - name: sunflower
+          # This is the name of the port in the service
+          port: http

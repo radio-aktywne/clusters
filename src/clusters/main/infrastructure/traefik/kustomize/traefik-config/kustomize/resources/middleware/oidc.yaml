@@ -38,7 +38,7 @@ spec:
       maxRefreshTokenAgeSeconds: 2592000
       minimalHeaders: true
       overrideScopes: true
-      postLogoutRedirectURI: /
+      postLogoutRedirectURI: https://sso.radioaktywne.pl/logout/callback
       providerURL: https://oidc.radioaktywne.pl
       redis:
         address: dragonfly.traefik.svc.cluster.local:6379

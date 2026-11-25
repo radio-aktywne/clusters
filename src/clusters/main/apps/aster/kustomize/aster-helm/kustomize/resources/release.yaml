@@ -19,3 +19,12 @@ spec:
   values:
     aster:
       debug: false
+      urls:
+        orchid:
+          host: konto.radioaktywne.pl
+          port: null
+          scheme: https
+        sunflower:
+          host: start.radioaktywne.pl
+          port: null
+          scheme: https
