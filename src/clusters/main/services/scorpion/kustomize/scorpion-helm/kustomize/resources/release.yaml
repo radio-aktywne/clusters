@@ -37,6 +37,7 @@ spec:
             - https://operacje.radioaktywne.pl/auth/callback
             - https://playlisty.radioaktywne.pl/auth/callback
             - https://sesja.radioaktywne.pl/auth/callback
+            - https://sso.radioaktywne.pl/auth/callback
             - https://start.radioaktywne.pl/auth/callback
             - https://studio.radioaktywne.pl/auth/callback
             - https://transmisja.radioaktywne.pl/auth/callback
@@ -44,6 +45,7 @@ spec:
             - https://headlamp.k8s.radioaktywne.pl/auth/callback
             - https://longhorn.k8s.radioaktywne.pl/auth/callback
             - https://aster.k8s.radioaktywne.pl/auth/callback
+            - https://crocus.k8s.radioaktywne.pl/auth/callback
             - https://daisy.k8s.radioaktywne.pl/auth/callback
             - https://jasmine.k8s.radioaktywne.pl/auth/callback
             - https://lotus.k8s.radioaktywne.pl/auth/callback
