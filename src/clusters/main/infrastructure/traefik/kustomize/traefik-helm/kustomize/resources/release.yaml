@@ -27,6 +27,8 @@ spec:
         value: /etc/ssl/certs/:/certs/
     # Experimental features
     experimental:
+      # Exit if any plugin fails to load
+      abortOnPluginFailure: true
       # Plugins
       plugins:
         # OIDC plugin
