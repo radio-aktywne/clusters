@@ -17,9 +17,6 @@ spec:
   # This key always needs to be here for patching to work
   postRenderers: []
   values:
-    minium:
-      urls:
-        web: https://web.minium.k8s.radioaktywne.pl
     volume:
       # Use ReadWriteOnce access mode
       access: ReadWriteOnce

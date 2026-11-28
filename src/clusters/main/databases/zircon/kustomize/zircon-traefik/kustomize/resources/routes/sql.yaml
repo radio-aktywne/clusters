@@ -1,0 +1,17 @@
+# Create SQL ingress route for zircon
+apiVersion: traefik.io/v1alpha1
+kind: IngressRouteTCP
+metadata:
+  name: zircon-sql
+spec:
+  entryPoints:
+    # Use entrypoint for zircon SQL traffic
+    - zircon-sql
+  routes:
+    # Match all traffic
+    - match: HostSNI(`*`)
+      services:
+        # Route traffic to the zircon service
+        - name: zircon
+          # This is the name of the port in the service
+          port: sql

@@ -1,0 +1,8 @@
+# Configure names transformer
+nameReference:
+  - kind: Secret
+    fieldSpecs:
+      # Replace secret names in HelmReleases
+      - group: helm.toolkit.fluxcd.io
+        kind: HelmRelease
+        path: spec/valuesFrom/name

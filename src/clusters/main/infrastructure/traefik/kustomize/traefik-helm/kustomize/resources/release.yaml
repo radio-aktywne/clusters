@@ -192,6 +192,17 @@ spec:
         protocol: TCP
         # Port to use inside the cluster
         port: 9993
+      # Port for zircon SQL traffic
+      zircon-sql:
+        # Expose it outside the cluster
+        expose:
+          default: true
+        # Expose it on this port
+        exposedPort: 9992
+        # zircon SQL traffic uses TCP
+        protocol: TCP
+        # Port to use inside the cluster
+        port: 9992
     providers:
       kubernetesCRD:
         # Allow cross-namespace references in resources

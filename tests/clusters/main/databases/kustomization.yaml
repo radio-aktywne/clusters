@@ -12,9 +12,11 @@ resources: []
 #   - emerald/emerald.yaml
 #   - graphite/graphite.yaml
 #   - howlite/howlite.yaml
+#   - jade/jade.yaml
 #   - minium/minium.yaml
 #   - obsidian/obsidian.yaml
 #   - sapphire/sapphire.yaml
+#   - zircon/zircon.yaml
 # Apply patches for common configurations
 patches:
   # Set patch to add labels to all resources in nested Kustomizations

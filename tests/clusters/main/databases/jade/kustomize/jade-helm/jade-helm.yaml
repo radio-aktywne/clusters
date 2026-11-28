@@ -1,0 +1,13 @@
+# Create jade-helm Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: jade-helm
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: tests/clusters/main/databases/jade/kustomize/jade-helm/kustomize
+  dependsOn:
+    # Deploy namespace first
+    - name: jade-namespace
+  # This key always needs to be here for patching to work
+  patches: []

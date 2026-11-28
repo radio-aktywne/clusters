@@ -1,0 +1,10 @@
+# Create jade-namespace Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: jade-namespace
+spec:
+  # Path inside repository to a directory containing Kustomization files
+  path: tests/clusters/main/databases/jade/kustomize/jade-namespace/kustomize
+  # This key always needs to be here for patching to work
+  patches: []
