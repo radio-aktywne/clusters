@@ -17,9 +17,6 @@ spec:
   # This key always needs to be here for patching to work
   postRenderers: []
   values:
-    emerald:
-      urls:
-        web: https://web.emerald.k8s.radioaktywne.pl
     volume:
       # Use ReadWriteOnce access mode
       access: ReadWriteOnce
